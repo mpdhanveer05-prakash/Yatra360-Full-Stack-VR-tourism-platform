@@ -1,0 +1,26 @@
+{
+  "name": "Yatra360 — Virtual Tourism of India",
+  "short_name": "Yatra360",
+  "description": "Browser-native 360° tours of India's heritage sites, forts, temples, and landscapes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0D0F1A",
+  "theme_color": "#FF6B1A",
+  "orientation": "any",
+  "categories": ["education", "travel", "entertainment"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

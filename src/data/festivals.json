@@ -1,0 +1,108 @@
+{
+  "festivals": [
+    {
+      "id": "diwali",
+      "name": "Diwali",
+      "subtitle": "Festival of Lights",
+      "month": 11,
+      "day": 1,
+      "duration": 5,
+      "color": "#FF6B1A",
+      "particle": "diya",
+      "regions":  ["all"],
+      "categories": ["temple", "spiritual", "heritage", "fort"],
+      "blurb": "Rows of oil lamps line every doorway tonight. Markets glow saffron and gold; firecrackers crackle long past midnight."
+    },
+    {
+      "id": "holi",
+      "name": "Holi",
+      "subtitle": "Festival of Colors",
+      "month": 3,
+      "day": 14,
+      "duration": 2,
+      "color": "#D946EF",
+      "particle": "color",
+      "regions": ["north", "central", "east"],
+      "categories": ["heritage", "temple"],
+      "blurb": "Plumes of colored powder rise from every courtyard. Strangers smear gulal on each other. Bhang lassis flow."
+    },
+    {
+      "id": "vaisakhi",
+      "name": "Vaisakhi",
+      "subtitle": "Sikh New Year",
+      "month": 4,
+      "day": 13,
+      "duration": 2,
+      "color": "#F0C040",
+      "particle": "marigold",
+      "regions": ["north"],
+      "categories": ["spiritual", "temple"],
+      "blurb": "Nagar kirtans wind through the streets. The Golden Temple gleams brighter than usual under fresh marigold garlands."
+    },
+    {
+      "id": "navratri",
+      "name": "Navratri & Dussehra",
+      "subtitle": "Nine nights of Durga",
+      "month": 10,
+      "day": 3,
+      "duration": 10,
+      "color": "#C4622D",
+      "particle": "marigold",
+      "regions": ["west", "east", "south"],
+      "categories": ["temple", "spiritual", "heritage", "fort"],
+      "blurb": "Garba circles in Gujarat. Pandals tower over Kolkata. Mysore Palace lights all hundred thousand bulbs."
+    },
+    {
+      "id": "pongal",
+      "name": "Pongal",
+      "subtitle": "Tamil harvest festival",
+      "month": 1,
+      "day": 14,
+      "duration": 4,
+      "color": "#D4A017",
+      "particle": "marigold",
+      "regions": ["south"],
+      "categories": ["temple", "spiritual"],
+      "blurb": "Earthen pots bubble over with new rice. Kolams chalked at every threshold. Cattle painted and crowned."
+    },
+    {
+      "id": "rath-yatra",
+      "name": "Rath Yatra",
+      "subtitle": "Chariot of Jagannath",
+      "month": 7,
+      "day": 7,
+      "duration": 9,
+      "color": "#FF8C42",
+      "particle": "marigold",
+      "regions": ["east"],
+      "categories": ["spiritual", "temple"],
+      "blurb": "Three immense wooden chariots roll through Puri pulled by tens of thousands of devotees."
+    },
+    {
+      "id": "kumbh-mela",
+      "name": "Kumbh Mela",
+      "subtitle": "Great pilgrim gathering",
+      "month": 1,
+      "day": 14,
+      "duration": 45,
+      "color": "#FF8C42",
+      "particle": "marigold",
+      "regions": ["north", "central"],
+      "categories": ["spiritual", "heritage"],
+      "blurb": "Millions converge at the sangam. Sadhus in saffron, ash-smeared akharas, ritual baths at dawn."
+    },
+    {
+      "id": "republic-day",
+      "name": "Republic Day",
+      "subtitle": "26 January",
+      "month": 1,
+      "day": 26,
+      "duration": 1,
+      "color": "#FF6B1A",
+      "particle": "tricolor",
+      "regions": ["all"],
+      "categories": ["museum", "heritage", "fort"],
+      "blurb": "Tricolor flying high. Parades down Rajpath. India Gate floodlit."
+    }
+  ]
+}

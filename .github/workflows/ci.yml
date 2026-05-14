@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  frontend:
+    name: Frontend (lint · type-check · test · build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run type-check
+      - run: npm test
+      - run: npm run build
+        env:
+          # Build still succeeds without these; they're only used at runtime.
+          VITE_API_BASE_URL: http://localhost:3001
+          VITE_AI_ENGINE_URL: http://localhost:8000
+
+  ai-engine:
+    name: AI engine (syntax check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r ai_engine/requirements.txt
+      - name: Validate Python syntax
+        run: |
+          python -c "import ai_engine.main, ai_engine.models.rag_guide, ai_engine.routers.guide"

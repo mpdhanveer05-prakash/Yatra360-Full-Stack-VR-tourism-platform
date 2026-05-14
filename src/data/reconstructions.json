@@ -1,0 +1,117 @@
+{
+  "reconstructions": [
+    {
+      "locationId": "taj-mahal-agra",
+      "eras": ["now", "colonial", "mughal"],
+      "context": {
+        "mughal":   "Newly completed under Shah Jahan, white marble still cool to touch. Scaffolding gone for less than a decade. The riverfront garden floods on schedule with Yamuna water.",
+        "colonial": "British engineers measure the dome's curvature with theodolites. Workmen restore inlay stones loosened by neglect. The garden runs dry; lawns replace pools.",
+        "now":      "Crowds queue at Diana's Bench. UV-scrubbing keeps the marble from yellowing in modern air."
+      }
+    },
+    {
+      "locationId": "hampi-karnataka",
+      "eras": ["now", "colonial", "mughal", "medieval"],
+      "context": {
+        "medieval": "Capital of Vijayanagara at its zenith. Bazaars stretch along the Tungabhadra. Stone elephants stand in their stables. The Stone Chariot pulls toward the sanctum.",
+        "mughal":   "Sacked in 1565 — Deccan sultans burn the city for six months. Boulders cover what bazaars used to be. Pilgrims still come to Virupaksha temple.",
+        "colonial": "Archaeological Survey clears jungle. Drawings of \"the lost city\" circulate in London. Stone Chariot becomes a postcard.",
+        "now":      "UNESCO World Heritage site. Backpacker cafés on the river. Boulders still hold the city's footprint."
+      }
+    },
+    {
+      "locationId": "ajanta-caves-maharashtra",
+      "eras": ["now", "colonial", "classical", "ancient"],
+      "context": {
+        "ancient":   "First Buddhist monks chisel into the volcanic cliff. Paintings begin in earnest.",
+        "classical": "Vakataka kings finance the great mural cycle. Cave 1, 2, 16, 17 — the masterpieces are wet plaster.",
+        "colonial":  "A British hunting party stumbles on the caves in 1819. Smoke from torches blackens the frescoes. Tracings ship to London.",
+        "now":       "Climate-controlled lighting. Visitors in shoe covers. Murals preserved one inch at a time."
+      }
+    },
+    {
+      "locationId": "konark-sun-temple-odisha",
+      "eras": ["now", "colonial", "medieval"],
+      "context": {
+        "medieval": "Built by King Narasimhadeva I as a chariot of the Sun. Twenty-four stone wheels, seven horses, every surface carved. The lodestone-capped tower still stands.",
+        "colonial": "The main shikhara has collapsed. British engineers fill the sealed jagamohana with sand to stop further collapse. \"Black Pagoda\" on shipping charts.",
+        "now":      "Sand removed only partially. Erosion races restoration. The chariot wheels still turn for sunset photographs."
+      }
+    },
+    {
+      "locationId": "fatehpur-sikri-up",
+      "eras": ["now", "colonial", "mughal"],
+      "context": {
+        "mughal":   "Akbar's capital — built in fourteen years, abandoned in fourteen more. Diwan-i-Khas debates burn through the night. Buland Darwaza, the largest gateway in Asia, frames the sky.",
+        "colonial": "Empty courts. Travel writers describe \"a city of dreams\". Restoration begins under Curzon.",
+        "now":      "School groups in the Panch Mahal. Pigeons in the Jami Masjid courtyards."
+      }
+    },
+    {
+      "locationId": "qutb-minar-delhi",
+      "eras": ["now", "colonial", "medieval"],
+      "context": {
+        "medieval": "Qutbuddin Aibak begins the minaret. Iltutmish finishes the top stages. Quranic calligraphy spirals upward, fresh-cut.",
+        "colonial": "Damaged by earthquakes. Major Smith adds a cupola in 1828 — and is later asked to remove it. Drawings flood Victorian guidebooks.",
+        "now":      "Closed to climbers since 1981. Iron pillar still rust-free in the courtyard."
+      }
+    },
+    {
+      "locationId": "khajuraho-temples-mp",
+      "eras": ["now", "colonial", "medieval"],
+      "context": {
+        "medieval": "Chandela dynasty at peak. Eighty-five temples in granite and sandstone, every surface alive with figures. Tantric texts in stone.",
+        "colonial": "T. S. Burt rediscovers in 1838 — many temples reclaimed by jungle. Twenty survive.",
+        "now":      "UNESCO. Dance festival every February below the Lakshmana temple."
+      }
+    },
+    {
+      "locationId": "mehrangarh-fort-jodhpur",
+      "eras": ["now", "colonial", "mughal", "medieval"],
+      "context": {
+        "medieval": "Rao Jodha founds the fort on the bhakurcheeria — the mountain of birds. The cliff is freshly cut to height.",
+        "mughal":   "Rajput courts negotiate with Mughal envoys at Phool Mahal. Cannons on Loha Pol.",
+        "colonial": "Princely state under British paramountcy. Royal motorcars climb the new ramp.",
+        "now":      "Museum and concert venue. Sandstone glows orange against the blue city below."
+      }
+    },
+    {
+      "locationId": "ellora-caves-maharashtra",
+      "eras": ["now", "colonial", "medieval", "classical"],
+      "context": {
+        "classical": "Buddhist viharas carved from basalt. Monks meditate as the rock is hollowed.",
+        "medieval":  "Kailasa Temple begins — top down. Rashtrakuta workmen carve a Himalayan peak into a single stone over 100 years.",
+        "colonial":  "Visited by orientalists; etchings appear in the Asiatic Society journals.",
+        "now":       "UNESCO. Jain, Hindu, Buddhist caves side by side — a single hillside of devotion."
+      }
+    },
+    {
+      "locationId": "red-fort-delhi",
+      "eras": ["now", "colonial", "mughal"],
+      "context": {
+        "mughal":   "Shah Jahan's new capital. Diwan-i-Aam holds court. The Peacock Throne is the centerpiece. Yamuna laps at the eastern wall.",
+        "colonial": "British East India Company drains the moat. 1857 ends Mughal rule here; the fort becomes a barracks. White paint covers marble inlay.",
+        "now":      "Independence Day flag hoists from the ramparts. Sound and light shows after dark."
+      }
+    },
+    {
+      "locationId": "amber-fort-jaipur",
+      "eras": ["now", "colonial", "mughal", "medieval"],
+      "context": {
+        "medieval": "Kachhwaha rajas govern from Amer. The fort blends Hindu and emerging Mughal styles.",
+        "mughal":   "Sheesh Mahal glittering under candle flame. Elephant processions climb to the gate.",
+        "colonial": "Royal capital moved to Jaipur city. Fort becomes ceremonial.",
+        "now":      "Daily elephant rides paused for welfare. Light show after sundown."
+      }
+    },
+    {
+      "locationId": "mahabalipuram-shore-temple",
+      "eras": ["now", "colonial", "classical"],
+      "context": {
+        "classical": "Pallava chisellers carve granite by the Bay of Bengal. Rathas rise as single boulders sculpted to temples.",
+        "colonial":  "British surveyors catalog \"the Seven Pagodas\". Locals describe sister temples lost to the sea.",
+        "now":       "UNESCO. Tsunami of 2004 briefly uncovered submerged structures offshore."
+      }
+    }
+  ]
+}

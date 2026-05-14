@@ -1,0 +1,370 @@
+{
+  "_note": "Curated subset of the Archaeological Survey of India's centrally-protected monument list. Real ASI numbers where publicly documented; full list at data.gov.in/resources/list-centrally-protected-monuments-sitesarchaeological-survey-india. Schema is forward-compatible with the full CSV.",
+  "version": "2026.05",
+  "monuments": [
+    {
+      "asiId":    "N-UP-A4",
+      "name":     "Taj Mahal",
+      "category": "Mughal mausoleum",
+      "state":    "Uttar Pradesh",
+      "district": "Agra",
+      "lat":      27.1751,
+      "lng":      78.0421,
+      "circle":   "Agra",
+      "yatraLocationId": "taj-mahal-agra"
+    },
+    {
+      "asiId":    "N-UP-A23",
+      "name":     "Itimad-ud-Daulah's Tomb",
+      "category": "Mughal mausoleum",
+      "state":    "Uttar Pradesh",
+      "district": "Agra",
+      "lat":      27.1929,
+      "lng":      78.0306,
+      "circle":   "Agra"
+    },
+    {
+      "asiId":    "N-UP-A1",
+      "name":     "Agra Fort",
+      "category": "Mughal fort",
+      "state":    "Uttar Pradesh",
+      "district": "Agra",
+      "lat":      27.1795,
+      "lng":      78.0211,
+      "circle":   "Agra"
+    },
+    {
+      "asiId":    "N-UP-A48",
+      "name":     "Fatehpur Sikri",
+      "category": "Mughal palace complex",
+      "state":    "Uttar Pradesh",
+      "district": "Agra",
+      "lat":      27.0937,
+      "lng":      77.6610,
+      "circle":   "Agra",
+      "yatraLocationId": "fatehpur-sikri-up"
+    },
+    {
+      "asiId":    "N-DL-46",
+      "name":     "Qutb Minar",
+      "category": "Indo-Islamic tower",
+      "state":    "Delhi",
+      "district": "South Delhi",
+      "lat":      28.5245,
+      "lng":      77.1855,
+      "circle":   "Delhi",
+      "yatraLocationId": "qutb-minar-delhi"
+    },
+    {
+      "asiId":    "N-DL-77",
+      "name":     "Red Fort",
+      "category": "Mughal fort",
+      "state":    "Delhi",
+      "district": "Central Delhi",
+      "lat":      28.6562,
+      "lng":      77.2410,
+      "circle":   "Delhi",
+      "yatraLocationId": "red-fort-delhi"
+    },
+    {
+      "asiId":    "N-DL-25",
+      "name":     "Humayun's Tomb",
+      "category": "Mughal mausoleum",
+      "state":    "Delhi",
+      "district": "South Delhi",
+      "lat":      28.5933,
+      "lng":      77.2507,
+      "circle":   "Delhi"
+    },
+    {
+      "asiId":    "N-DL-67",
+      "name":     "Purana Qila",
+      "category": "Fort",
+      "state":    "Delhi",
+      "district": "Central Delhi",
+      "lat":      28.6090,
+      "lng":      77.2436,
+      "circle":   "Delhi"
+    },
+    {
+      "asiId":    "N-DL-30",
+      "name":     "Jantar Mantar, Delhi",
+      "category": "Observatory",
+      "state":    "Delhi",
+      "district": "New Delhi",
+      "lat":      28.6271,
+      "lng":      77.2166,
+      "circle":   "Delhi"
+    },
+    {
+      "asiId":    "N-KA-A1",
+      "name":     "Hampi — Group of Monuments",
+      "category": "Vijayanagara capital",
+      "state":    "Karnataka",
+      "district": "Vijayanagara",
+      "lat":      15.3350,
+      "lng":      76.4600,
+      "circle":   "Bengaluru",
+      "yatraLocationId": "hampi-karnataka"
+    },
+    {
+      "asiId":    "N-MH-A4",
+      "name":     "Ajanta Caves",
+      "category": "Buddhist rock-cut caves",
+      "state":    "Maharashtra",
+      "district": "Aurangabad",
+      "lat":      20.5519,
+      "lng":      75.7033,
+      "circle":   "Aurangabad",
+      "yatraLocationId": "ajanta-caves-maharashtra"
+    },
+    {
+      "asiId":    "N-MH-A6",
+      "name":     "Ellora Caves",
+      "category": "Buddhist, Hindu & Jain rock-cut caves",
+      "state":    "Maharashtra",
+      "district": "Aurangabad",
+      "lat":      20.0269,
+      "lng":      75.1790,
+      "circle":   "Aurangabad",
+      "yatraLocationId": "ellora-caves-maharashtra"
+    },
+    {
+      "asiId":    "N-MP-A1",
+      "name":     "Khajuraho — Group of Temples",
+      "category": "Chandela-period temples",
+      "state":    "Madhya Pradesh",
+      "district": "Chhatarpur",
+      "lat":      24.8528,
+      "lng":      79.9239,
+      "circle":   "Bhopal",
+      "yatraLocationId": "khajuraho-temples-mp"
+    },
+    {
+      "asiId":    "N-OR-A1",
+      "name":     "Konark Sun Temple",
+      "category": "Ganga-period temple",
+      "state":    "Odisha",
+      "district": "Puri",
+      "lat":      19.8876,
+      "lng":      86.0945,
+      "circle":   "Bhubaneswar",
+      "yatraLocationId": "konark-sun-temple-odisha"
+    },
+    {
+      "asiId":    "N-TN-A1",
+      "name":     "Mahabalipuram — Group of Monuments",
+      "category": "Pallava rock-cut & structural temples",
+      "state":    "Tamil Nadu",
+      "district": "Chengalpattu",
+      "lat":      12.6168,
+      "lng":      80.1992,
+      "circle":   "Chennai",
+      "yatraLocationId": "mahabalipuram-shore-temple"
+    },
+    {
+      "asiId":    "N-TN-T1",
+      "name":     "Brihadisvara Temple, Thanjavur",
+      "category": "Chola temple",
+      "state":    "Tamil Nadu",
+      "district": "Thanjavur",
+      "lat":      10.7828,
+      "lng":      79.1318,
+      "circle":   "Chennai",
+      "yatraLocationId": "brihadeeswarar-temple-thanjavur"
+    },
+    {
+      "asiId":    "N-RJ-A1",
+      "name":     "Mehrangarh Fort",
+      "category": "Rathore fort",
+      "state":    "Rajasthan",
+      "district": "Jodhpur",
+      "lat":      26.2989,
+      "lng":      73.0188,
+      "circle":   "Jaipur",
+      "yatraLocationId": "mehrangarh-fort-jodhpur"
+    },
+    {
+      "asiId":    "N-RJ-A2",
+      "name":     "Amer Fort",
+      "category": "Kachhwaha fort",
+      "state":    "Rajasthan",
+      "district": "Jaipur",
+      "lat":      26.9855,
+      "lng":      75.8513,
+      "circle":   "Jaipur",
+      "yatraLocationId": "amber-fort-jaipur"
+    },
+    {
+      "asiId":    "N-RJ-A6",
+      "name":     "Chittorgarh Fort",
+      "category": "Rajput hill fort",
+      "state":    "Rajasthan",
+      "district": "Chittorgarh",
+      "lat":      24.8887,
+      "lng":      74.6269,
+      "circle":   "Jaipur",
+      "yatraLocationId": "chittorgarh-fort-rajasthan"
+    },
+    {
+      "asiId":    "N-RJ-A8",
+      "name":     "Jaisalmer Fort",
+      "category": "Rajput desert fort",
+      "state":    "Rajasthan",
+      "district": "Jaisalmer",
+      "lat":      26.9117,
+      "lng":      70.9125,
+      "circle":   "Jaipur",
+      "yatraLocationId": "jaisalmer-fort-rajasthan"
+    },
+    {
+      "asiId":    "N-MP-G1",
+      "name":     "Gwalior Fort",
+      "category": "Tomar / Sikri fort",
+      "state":    "Madhya Pradesh",
+      "district": "Gwalior",
+      "lat":      26.2295,
+      "lng":      78.1690,
+      "circle":   "Bhopal",
+      "yatraLocationId": "gwalior-fort-mp"
+    },
+    {
+      "asiId":    "N-TG-A1",
+      "name":     "Golconda Fort",
+      "category": "Qutb Shahi fort",
+      "state":    "Telangana",
+      "district": "Hyderabad",
+      "lat":      17.3833,
+      "lng":      78.4011,
+      "circle":   "Hyderabad",
+      "yatraLocationId": "golconda-fort-hyderabad"
+    },
+    {
+      "asiId":    "N-KA-B1",
+      "name":     "Bidar Fort",
+      "category": "Bahmani fort",
+      "state":    "Karnataka",
+      "district": "Bidar",
+      "lat":      17.9244,
+      "lng":      77.5170,
+      "circle":   "Bengaluru",
+      "yatraLocationId": "bidar-fort-karnataka"
+    },
+    {
+      "asiId":    "N-TN-M3",
+      "name":     "Kapaleeshwarar Temple area (Mylapore)",
+      "category": "Dravidian temple",
+      "state":    "Tamil Nadu",
+      "district": "Chennai",
+      "lat":      13.0339,
+      "lng":      80.2698,
+      "circle":   "Chennai",
+      "yatraLocationId": "kapaleeshwarar-temple-chennai"
+    },
+    {
+      "asiId":    "N-OR-B1",
+      "name":     "Lingaraja Temple, Bhubaneswar",
+      "category": "Kalinga-style temple",
+      "state":    "Odisha",
+      "district": "Khordha",
+      "lat":      20.2381,
+      "lng":      85.8336,
+      "circle":   "Bhubaneswar",
+      "yatraLocationId": "lingaraj-temple-bhubaneswar"
+    },
+    {
+      "asiId":    "N-MH-A1",
+      "name":     "Aurangabad Caves",
+      "category": "Buddhist rock-cut caves",
+      "state":    "Maharashtra",
+      "district": "Aurangabad",
+      "lat":      19.9020,
+      "lng":      75.3380,
+      "circle":   "Aurangabad"
+    },
+    {
+      "asiId":    "N-MH-A19",
+      "name":     "Daulatabad Fort",
+      "category": "Yadava / Tughlaq fort",
+      "state":    "Maharashtra",
+      "district": "Aurangabad",
+      "lat":      19.9430,
+      "lng":      75.2143,
+      "circle":   "Aurangabad"
+    },
+    {
+      "asiId":    "N-MH-A24",
+      "name":     "Bibi ka Maqbara",
+      "category": "Mughal mausoleum",
+      "state":    "Maharashtra",
+      "district": "Aurangabad",
+      "lat":      19.9018,
+      "lng":      75.3204,
+      "circle":   "Aurangabad"
+    },
+    {
+      "asiId":    "N-OR-K1",
+      "name":     "Rajarani Temple, Bhubaneswar",
+      "category": "Kalinga-style temple",
+      "state":    "Odisha",
+      "district": "Khordha",
+      "lat":      20.2470,
+      "lng":      85.8430,
+      "circle":   "Bhubaneswar"
+    },
+    {
+      "asiId":    "N-OR-K2",
+      "name":     "Mukteshwar Temple, Bhubaneswar",
+      "category": "Kalinga-style temple",
+      "state":    "Odisha",
+      "district": "Khordha",
+      "lat":      20.2433,
+      "lng":      85.8389,
+      "circle":   "Bhubaneswar"
+    },
+    {
+      "asiId":    "N-WB-K3",
+      "name":     "Victoria Memorial Hall",
+      "category": "Colonial monument",
+      "state":    "West Bengal",
+      "district": "Kolkata",
+      "lat":      22.5448,
+      "lng":      88.3426,
+      "circle":   "Kolkata",
+      "yatraLocationId": "victoria-memorial-kolkata"
+    },
+    {
+      "asiId":    "N-MH-M1",
+      "name":     "Gateway of India",
+      "category": "Colonial monument",
+      "state":    "Maharashtra",
+      "district": "Mumbai",
+      "lat":      18.9220,
+      "lng":      72.8347,
+      "circle":   "Mumbai",
+      "yatraLocationId": "gateway-of-india-mumbai"
+    },
+    {
+      "asiId":    "N-DL-90",
+      "name":     "India Gate",
+      "category": "War memorial",
+      "state":    "Delhi",
+      "district": "New Delhi",
+      "lat":      28.6129,
+      "lng":      77.2295,
+      "circle":   "Delhi",
+      "yatraLocationId": "india-gate-delhi"
+    },
+    {
+      "asiId":    "N-MP-S1",
+      "name":     "Somnath Temple (precinct)",
+      "category": "Shaivite pilgrimage",
+      "state":    "Gujarat",
+      "district": "Gir Somnath",
+      "lat":      20.8880,
+      "lng":      70.4017,
+      "circle":   "Vadodara",
+      "yatraLocationId": "somnath-temple-gujarat"
+    }
+  ]
+}

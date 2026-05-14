@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(npm run *)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('ai_engine/models/rag_guide.py'\\).read\\(\\)\\); ast.parse\\(open\\('ai_engine/routers/guide.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(node -e \"const l = require\\('./src/data/indiaLocations.json'\\); console.log\\(l.filter\\(x => ['taj-mahal-agra','hampi-ruins','ajanta-caves','konark-sun-temple','fatehpur-sikri-uttar-pradesh','qutub-minar-delhi','khajuraho-temples','mehrangarh-fort','ellora-caves','red-fort-delhi'].includes\\(x.id\\)\\).map\\(x => x.id\\)\\)\")",
+      "Bash(node -e \"const l = require\\('./src/data/indiaLocations.json'\\); console.log\\(l.map\\(x => x.id\\).slice\\(0,20\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(Object.keys\\(p.devDependencies\\).filter\\(k => k.includes\\('pwa'\\)\\)\\)\")",
+      "Bash(node -e \"const l = require\\('./src/data/indiaLocations.json'\\); ['taj-mahal-agra','red-fort-delhi','qutb-minar-delhi','hampi-karnataka','mehrangarh-fort-jodhpur','amber-fort-jaipur','golden-temple-amritsar','india-gate-delhi','gateway-of-india-mumbai','mysore-palace-karnataka'].forEach\\(id => { const x = l.find\\(y => y.id === id\\); console.log\\(id, x?.lat, x?.lng\\) }\\)\")",
+      "Bash(taskkill /F /FI \"WindowTitle eq node*\")",
+      "Bash(powershell \"Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('./package.json'\\).dependencies\\).filter\\(k => k.includes\\('socket'\\)\\)\\)\")",
+      "Bash(npm install *)",
+      "Bash(npx vitest *)"
+    ]
+  }
+}

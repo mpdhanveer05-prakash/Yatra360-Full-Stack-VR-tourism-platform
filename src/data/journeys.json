@@ -1,0 +1,132 @@
+{
+  "journeys": [
+    {
+      "id": "rajput-citadels",
+      "title": "Rajput Citadels",
+      "subtitle": "Seven sandstone giants of the desert",
+      "description": "A circuit through Rajasthan's mightiest forts — sandstone walls, glittering palaces, and centuries of valor.",
+      "tone": "fort",
+      "icon": "🏰",
+      "duration": "~45 min",
+      "stops": [
+        "mehrangarh-fort-jodhpur",
+        "amber-fort-jaipur",
+        "chittorgarh-fort-rajasthan",
+        "city-palace-udaipur",
+        "jaisalmer-fort-rajasthan"
+      ]
+    },
+    {
+      "id": "unesco-classics",
+      "title": "UNESCO Classics",
+      "subtitle": "World heritage at a glance",
+      "description": "Eight inscribed monuments that define India's place on the world heritage map.",
+      "tone": "heritage",
+      "icon": "🏛",
+      "duration": "~60 min",
+      "stops": [
+        "taj-mahal-agra",
+        "red-fort-delhi",
+        "qutb-minar-delhi",
+        "ajanta-caves-maharashtra",
+        "ellora-caves-maharashtra",
+        "konark-sun-temple-odisha",
+        "khajuraho-temples-mp",
+        "hampi-karnataka"
+      ]
+    },
+    {
+      "id": "dravidian-trail",
+      "title": "Dravidian Temple Trail",
+      "subtitle": "Tower temples of the south",
+      "description": "Granite gopurams and ritual tanks from the Pallava, Chola, and Vijayanagara dynasties.",
+      "tone": "temple",
+      "icon": "⛩",
+      "duration": "~30 min",
+      "stops": [
+        "mahabalipuram-shore-temple",
+        "brihadeeswarar-temple-thanjavur",
+        "meenakshi-temple-madurai",
+        "kapaleeshwarar-temple-chennai"
+      ]
+    },
+    {
+      "id": "sacred-pilgrimage",
+      "title": "Sacred Pilgrimage",
+      "subtitle": "Char dham and beyond",
+      "description": "From the snows of Kedarnath to Jagannath by the sea — five spiritual anchors of India.",
+      "tone": "spiritual",
+      "icon": "🕉",
+      "duration": "~35 min",
+      "stops": [
+        "kedarnath-temple-uttarakhand",
+        "vaishno-devi-jammu",
+        "golden-temple-amritsar",
+        "tirupati-balaji-andhra",
+        "jagannath-temple-puri"
+      ]
+    },
+    {
+      "id": "wild-india",
+      "title": "Wild India",
+      "subtitle": "Forests, marshes, salt flats",
+      "description": "Tigers in Corbett, rhinos in Kaziranga, salt deserts in Kutch — India's natural extremes.",
+      "tone": "nature",
+      "icon": "🌿",
+      "duration": "~40 min",
+      "stops": [
+        "jim-corbett-uttarakhand",
+        "kaziranga-assam",
+        "sundarbans-west-bengal",
+        "rann-of-kutch-gujarat",
+        "spiti-valley-himachal"
+      ]
+    },
+    {
+      "id": "colonial-bombay-calcutta",
+      "title": "Colonial Skylines",
+      "subtitle": "Bombay & Calcutta in marble and steel",
+      "description": "Gateway, Victoria, Howrah — landmarks where the Empire met the sea.",
+      "tone": "museum",
+      "icon": "🛳",
+      "duration": "~25 min",
+      "stops": [
+        "gateway-of-india-mumbai",
+        "csmvs-mumbai",
+        "victoria-memorial-kolkata",
+        "indian-museum-kolkata",
+        "howrah-bridge-kolkata"
+      ]
+    },
+    {
+      "id": "ancient-classrooms",
+      "title": "Ancient Classrooms",
+      "subtitle": "Where knowledge was carved into stone",
+      "description": "Cave universities and rock-cut sanctuaries — India's earliest centers of learning and art.",
+      "tone": "heritage",
+      "icon": "📜",
+      "duration": "~30 min",
+      "stops": [
+        "ajanta-caves-maharashtra",
+        "ellora-caves-maharashtra",
+        "khajuraho-temples-mp",
+        "konark-sun-temple-odisha"
+      ]
+    },
+    {
+      "id": "monsoon-getaways",
+      "title": "Monsoon Getaways",
+      "subtitle": "Mist, tea, and mountain air",
+      "description": "Hill stations, tea estates, and valleys best experienced in the rain.",
+      "tone": "nature",
+      "icon": "☁",
+      "duration": "~20 min",
+      "stops": [
+        "munnar-tea-gardens-kerala",
+        "coorg-coffee-estates",
+        "valley-of-flowers-uttarakhand",
+        "andaman-islands"
+      ]
+    }
+  ]
+}

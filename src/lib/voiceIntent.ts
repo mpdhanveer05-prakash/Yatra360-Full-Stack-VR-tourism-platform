@@ -16,6 +16,17 @@ const NAV_PATTERNS: RegExp[] = [
   /visit (.+)/i,
 ]
 
+// Strip leading articles/prepositions and trailing filler words to get the
+// raw location name out of the captured group.
+function cleanQuery(raw: string): string {
+  return raw
+    .trim()
+    .replace(/[.!?,]+$/, '')                                     // trailing punctuation
+    .replace(/\s+(please|now|for me|right now|today)$/i, '')     // trailing filler
+    .replace(/^(the|a|an|to|in|at)\s+/i, '')                     // leading article/prep
+    .trim()
+}
+
 export interface NavIntent {
   query:    string
   location: IndiaLocation
@@ -23,26 +34,31 @@ export interface NavIntent {
 }
 
 /**
- * Returns a matched location if the transcript contains a navigation command,
- * or null if this looks like a regular guide question.
+ * Returns a matched location if the transcript contains a navigation command
+ * (or is just a bare location name like "Taj Mahal"), or null otherwise.
  */
 export function detectNavIntent(
   transcript: string,
   locations: IndiaLocation[],
 ): NavIntent | null {
   let query: string | null = null
+  let isCommand = false
 
   for (const pattern of NAV_PATTERNS) {
     const m = transcript.match(pattern)
     if (m?.[1]) {
-      // Strip trailing punctuation and filler words like "please", "now"
-      query = m[1]
-        .trim()
-        .replace(/[.!?,]+$/, '')
-        .replace(/\s+(please|now|for me)$/i, '')
-        .trim()
+      query = cleanQuery(m[1])
+      isCommand = true
       break
     }
+  }
+
+  // No navigation phrase — but if the entire transcript is short, try matching
+  // it as a bare location name (e.g. user just says "Taj Mahal").
+  if (!query) {
+    const bare = cleanQuery(transcript)
+    if (bare.length < 2 || bare.split(/\s+/).length > 5) return null
+    query = bare
   }
 
   if (!query || query.length < 2) return null
@@ -57,8 +73,12 @@ export function detectNavIntent(
   })
 
   const top = results[0]
-  // Require a reasonably confident match to avoid false positives
-  if (!top || top.score < 0.28) return null
+  if (!top) return null
+
+  // Bare-name matches need a higher score (to avoid hijacking guide questions);
+  // explicit commands can match with a lower confidence.
+  const threshold = isCommand ? 0.18 : 0.45
+  if (top.score < threshold) return null
 
   return { query, location: top.item, score: top.score }
 }

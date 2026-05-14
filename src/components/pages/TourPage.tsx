@@ -289,12 +289,14 @@ export default function TourPage() {
   const recordVisit = usePassportStore(s => s.recordVisit)
   const userId      = useUserStore(s => s.userId)
 
-  // Voice agent — STT → guide API → TTS pipeline
+  // Voice agent — STT → intent detection → navigation or guide answer
   const voice = useVoiceAgent({
-    locationSlug: activeLocation?.wikiSlug   ?? '',
-    nodeLabel:    currentNode?.label          ?? activeLocation?.name ?? '',
+    locationSlug: activeLocation?.wikiSlug ?? '',
+    nodeLabel:    currentNode?.label       ?? activeLocation?.name ?? '',
     locationId:   activeLocation?.id,
     userId,
+    locations:    allLocations,
+    onNavigate:   (locId) => navigate(`/tour/${locId}`),
   })
 
   useEffect(() => {

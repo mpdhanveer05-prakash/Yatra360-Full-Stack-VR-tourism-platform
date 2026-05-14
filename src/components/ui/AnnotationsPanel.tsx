@@ -73,7 +73,7 @@ export default function AnnotationsPanel({ locationId, locationName, getCameraVi
   }
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={() => setOpen(o => !o)}
         aria-label={open ? 'Close notes' : 'Open notes'}
@@ -95,7 +95,7 @@ export default function AnnotationsPanel({ locationId, locationName, getCameraVi
           role="dialog"
           aria-label="Community notes"
           className="
-            absolute top-14 right-4 z-30
+            absolute top-full mt-1 right-0 z-30
             w-80 max-h-[70vh] flex flex-col
             bg-bg-surface/96 backdrop-blur-md
             border border-gold/30 shadow-2xl rounded-sm
@@ -178,6 +178,6 @@ export default function AnnotationsPanel({ locationId, locationName, getCameraVi
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }

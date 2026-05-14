@@ -89,7 +89,7 @@ export default function CoTourPanel({ locationId, locationName, getSnapshot, onL
   const youAreLeader = co.room?.leaderId === userId
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={() => setOpen(o => !o)}
         aria-label={open ? 'Close co-tour' : 'Open co-tour'}
@@ -115,7 +115,7 @@ export default function CoTourPanel({ locationId, locationName, getSnapshot, onL
           role="dialog"
           aria-label="Co-tour"
           className="
-            absolute top-14 right-4 z-30
+            absolute top-full mt-1 right-0 z-30
             w-80 max-h-[70vh] flex flex-col
             bg-bg-surface/96 backdrop-blur-md
             border border-gold/30 shadow-2xl rounded-sm
@@ -243,6 +243,6 @@ export default function CoTourPanel({ locationId, locationName, getSnapshot, onL
           )}
         </div>
       )}
-    </>
+    </div>
   )
 }

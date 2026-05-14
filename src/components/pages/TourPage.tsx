@@ -108,15 +108,14 @@ function InfoPanel({ location }: { location: IndiaLocation }) {
   )
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={() => setOpen(o => !o)}
         className="
-          absolute top-4 right-4 z-30
           px-3 py-2 bg-bg-surface/90 backdrop-blur-sm
           border border-gold/30 hover:border-gold/60
           text-gold font-cinzel text-xs tracking-widest uppercase
-          transition-all duration-200
+          transition-all duration-200 whitespace-nowrap
         "
       >
         {open ? '✕ Close' : 'ℹ Info'}
@@ -124,7 +123,7 @@ function InfoPanel({ location }: { location: IndiaLocation }) {
 
       {open && (
         <div className="
-          absolute top-14 right-4 z-30
+          absolute top-full mt-1 right-0 z-30
           w-72 max-h-[70vh] overflow-y-auto
           bg-bg-surface/96 backdrop-blur-md
           border border-gold/30 p-4 space-y-4
@@ -218,7 +217,7 @@ function InfoPanel({ location }: { location: IndiaLocation }) {
           )}
         </div>
       )}
-    </>
+    </div>
   )
 }
 
@@ -413,19 +412,6 @@ export default function TourPage() {
             panoramaUrls={Array.from(nodeImages.values())}
             locationName={activeLocation.name}
           />
-          <AnnotationsPanel
-            locationId={activeLocation.id}
-            locationName={activeLocation.name}
-            getCameraView={() => {
-              const s = snapshotRef.current?.()
-              return s ? { yaw: s.yaw, pitch: s.pitch } : null
-            }}
-          />
-          <CoTourPanel
-            locationId={activeLocation.id}
-            locationName={activeLocation.name}
-            getSnapshot={() => snapshotRef.current?.() ?? null}
-          />
           <span className="hidden sm:inline-block font-mono text-[9px] text-text-muted bg-bg-elevated border border-gold/10 px-2 py-0.5 rounded-sm">
             {nodeCount} viewpoint{nodeCount !== 1 ? 's' : ''}
             {imagesLoading && viewMode === 'tour' ? ' · loading images…' : ''}
@@ -477,12 +463,27 @@ export default function TourPage() {
           </>
         )}
 
-        {/* Info panel always accessible */}
-        <InfoPanel location={activeLocation} />
+        {/* ── Right-side control strip (info, notes, co-tour) ── */}
+        <div className="absolute top-4 right-4 z-30 flex flex-col gap-2 items-end">
+          <InfoPanel location={activeLocation} />
+          <AnnotationsPanel
+            locationId={activeLocation.id}
+            locationName={activeLocation.name}
+            getCameraView={() => {
+              const s = snapshotRef.current?.()
+              return s ? { yaw: s.yaw, pitch: s.pitch } : null
+            }}
+          />
+          <CoTourPanel
+            locationId={activeLocation.id}
+            locationName={activeLocation.name}
+            getSnapshot={() => snapshotRef.current?.() ?? null}
+          />
+        </div>
 
         {/* Time-travel era slider (only when reconstructions exist) */}
         {hasTimeTravel(activeLocation.id) && (
-          <div className="absolute top-20 left-4 z-20">
+          <div className="absolute top-4 left-4 z-20">
             <EraSlider locationId={activeLocation.id} locationName={activeLocation.name} />
           </div>
         )}
@@ -499,8 +500,8 @@ export default function TourPage() {
         {/* Guide chat available in both viewer modes */}
         <GuideChat />
 
-        {/* Voice agent — floating mic button, bottom-right above guide chat */}
-        <div className="absolute bottom-20 right-4 z-30">
+        {/* Voice agent — floating mic, bottom-right above guide chat toggle */}
+        <div className="absolute bottom-24 right-4 z-30">
           <VoiceAgentButton
             state={voice.state}
             transcript={voice.transcript}

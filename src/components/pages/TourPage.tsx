@@ -297,6 +297,19 @@ export default function TourPage() {
     userId,
     locations:    allLocations,
     onNavigate:   (locId) => navigate(`/tour/${locId}`),
+    // Client-side fallback used when the backend isn't reachable (e.g. Vercel deploy)
+    getFallbackContext: () => activeLocation
+      ? {
+          locationName:  activeLocation.name,
+          description:   activeLocation.description,
+          city:          activeLocation.city,
+          state:         activeLocation.state,
+          category:      activeLocation.category,
+          established:   activeLocation.established,
+          unescoStatus:  activeLocation.unescoStatus,
+          wikiExtract:   summary?.extract,
+        }
+      : null,
   })
 
   useEffect(() => {

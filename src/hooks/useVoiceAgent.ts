@@ -3,17 +3,20 @@ import { tts } from '../lib/tts'
 import { askGuide } from '../api/backend'
 import { useUIStore } from '../store/uiStore'
 import { detectNavIntent } from '../lib/voiceIntent'
+import { buildFallbackAnswer, type FallbackContext } from '../lib/voiceFallback'
 import type { IndiaLocation } from '../types/location'
 
 export type VoiceAgentState = 'idle' | 'listening' | 'processing' | 'speaking' | 'error'
 
 interface Options {
-  locationSlug: string
-  nodeLabel:    string
-  locationId?:  string
-  userId?:      string
-  locations:    IndiaLocation[]
-  onNavigate?:  (locationId: string, locationName: string) => void
+  locationSlug:     string
+  nodeLabel:        string
+  locationId?:      string
+  userId?:          string
+  locations:        IndiaLocation[]
+  onNavigate?:      (locationId: string, locationName: string) => void
+  /** If provided, used to answer Q&A locally when the backend is unreachable. */
+  getFallbackContext?: () => FallbackContext | null
 }
 
 interface VoiceAgentResult {
@@ -60,7 +63,7 @@ function createRecognition(): SpeechRecognitionInstance | null {
 }
 
 export function useVoiceAgent({
-  locationSlug, nodeLabel, locationId, userId, locations, onNavigate,
+  locationSlug, nodeLabel, locationId, userId, locations, onNavigate, getFallbackContext,
 }: Options): VoiceAgentResult {
   const lang = useUIStore((s: { narrationLang: string }) => s.narrationLang)
 
@@ -160,6 +163,19 @@ export function useVoiceAgent({
       }
 
       // ── Guide question ────────────────────────────────────────────────────
+      const speakAnswer = (responseText: string) => {
+        setAnswer(responseText)
+        setState('speaking')
+        tts.speak(responseText, { lang: lang ?? 'en-IN', rate: 0.95 })
+
+        const poll = setInterval(() => {
+          if (tts.getStatus() === 'idle') {
+            clearInterval(poll)
+            setState('idle')
+          }
+        }, 300)
+      }
+
       try {
         const res = await askGuide({
           question:     text,
@@ -171,21 +187,22 @@ export function useVoiceAgent({
         })
 
         if (abortedRef.current) return
-
-        setAnswer(res.answer)
-        setState('speaking')
-        tts.speak(res.answer, { lang: lang ?? 'en-IN', rate: 0.95 })
-
-        const poll = setInterval(() => {
-          if (tts.getStatus() === 'idle') {
-            clearInterval(poll)
-            setState('idle')
-          }
-        }, 300)
+        speakAnswer(res.answer)
       } catch {
         if (abortedRef.current) return
-        setErrorMsg('Could not reach guide. Please try again.')
-        setState('error')
+
+        // Backend unreachable (e.g. Vercel-only deploy). Use the loaded
+        // Wikipedia + location data as a client-side fallback.
+        const ctx = getFallbackContext?.()
+        if (ctx) {
+          const fallbackAnswer = buildFallbackAnswer(text, ctx)
+          speakAnswer(fallbackAnswer)
+        } else {
+          setErrorMsg(
+            'Voice Q&A is offline. Try a navigation command like "take me to Hampi".'
+          )
+          setState('error')
+        }
       }
     }
 
@@ -211,7 +228,7 @@ export function useVoiceAgent({
       setErrorMsg('Could not start microphone.')
       setState('error')
     }
-  }, [state, supported, lang, locationSlug, nodeLabel, locationId, userId, locations, onNavigate])
+  }, [state, supported, lang, locationSlug, nodeLabel, locationId, userId, locations, onNavigate, getFallbackContext])
 
   return { state, transcript, answer, errorMsg, supported, start, stop, reset }
 }

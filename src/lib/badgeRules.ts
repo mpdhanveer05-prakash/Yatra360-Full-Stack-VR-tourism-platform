@@ -49,9 +49,9 @@ export const BADGE_DEFS: BadgeDef[] = [
   {
     id:   'all-india',
     name: 'All-India Explorer',
-    description: 'Complete all 50 destinations.',
+    description: 'Complete all 25 destinations.',
     icon: '🏆',
-    check: ({ stamps }) => stamps.length >= 50,
+    check: ({ stamps }) => stamps.length >= 25,
   },
   {
     id:   'citadel-wanderer',

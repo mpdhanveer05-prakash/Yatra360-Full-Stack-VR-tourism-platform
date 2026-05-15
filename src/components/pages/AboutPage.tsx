@@ -44,7 +44,7 @@ export default function AboutPage() {
           </h1>
           <p className="font-proza text-base text-text-secondary leading-relaxed max-w-2xl">
             <em>Yatra</em> means journey in Hindi and Sanskrit. Yatra360 is a browser-native virtual
-            reality tourism platform that brings 50 real Indian heritage sites, forts, temples, and
+            reality tourism platform that brings 25 real Indian heritage sites, forts, temples, and
             landscapes to anyone with a web browser — no headset, no download, no cost.
           </p>
           <p className="font-proza text-base text-text-secondary leading-relaxed max-w-2xl">
@@ -68,9 +68,9 @@ export default function AboutPage() {
               </div>
             ))}
             <div className="card p-4 space-y-2 flex flex-col justify-center items-center text-center">
-              <p className="font-cinzel font-black text-3xl text-gold">50</p>
+              <p className="font-cinzel font-black text-3xl text-gold">25</p>
               <p className="font-mono text-[10px] tracking-widest text-text-muted uppercase">Total Sites</p>
-              <p className="font-mono text-[10px] text-text-muted">Across 28 states</p>
+              <p className="font-mono text-[10px] text-text-muted">With walkable Street View</p>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
           </h2>
           <div className="flex gap-4 justify-center flex-wrap">
             <button onClick={() => navigate('/explore')} className="btn-primary text-sm">
-              Explore All 50 Destinations →
+              Explore All 25 Destinations →
             </button>
             <button onClick={() => navigate('/tour/taj-mahal-agra')} className="btn-secondary text-sm">
               Try Taj Mahal

@@ -5,7 +5,7 @@
 //   - Wikipedia API: stale-while-revalidate (1 day).
 //   - Yatra360 backend API: network-first, short timeout, then fall through.
 
-const VERSION = 'yatra360-v6'
+const VERSION = 'yatra360-v7'
 const SHELL_CACHE     = `${VERSION}-shell`
 const PANORAMA_CACHE  = `${VERSION}-panoramas`
 const WIKI_CACHE      = `${VERSION}-wiki`

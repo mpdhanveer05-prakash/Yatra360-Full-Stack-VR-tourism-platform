@@ -151,7 +151,7 @@ export default function HomePage() {
               <span className="text-saffron">Every Era.</span>
             </h1>
             <p className="font-proza text-base text-text-secondary max-w-xl animate-fade-in">
-              20 globally iconic landmarks — Eiffel Tower, Colosseum, Times Square, Taj Mahal and more — fully immersive 360° tours
+              69 destinations across India and the world — Eiffel Tower, Colosseum, Taj Mahal, Hampi, Mehrangarh Fort, and more — immersive tours
               powered by AI. No headset, no download, no cost.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-up">
@@ -181,7 +181,7 @@ export default function HomePage() {
       <section className="border-y border-[var(--border)] bg-bg-surface">
         <div className="max-w-5xl mx-auto px-6 py-5 flex flex-wrap justify-center gap-x-10 gap-y-3">
           {[
-            ['20', 'Destinations'],
+            ['69', 'Destinations'],
             ['28', 'States'],
             ['5,000+', 'Years of History'],
             ['Free', 'Forever'],
@@ -202,7 +202,7 @@ export default function HomePage() {
             <h2 className="font-cinzel text-2xl text-cream">Featured Destinations</h2>
           </div>
           <button onClick={() => navigate('/explore')} className="btn-secondary text-xs py-2 hidden sm:block">
-            View All 20 →
+            View All 69 →
           </button>
         </div>
 
@@ -215,7 +215,7 @@ export default function HomePage() {
 
         <div className="text-center sm:hidden">
           <button onClick={() => navigate('/explore')} className="btn-secondary text-xs py-2">
-            View All 20 Destinations →
+            View All 69 Destinations →
           </button>
         </div>
       </section>
@@ -259,7 +259,7 @@ export default function HomePage() {
           The longer you wander, the smarter your guide becomes.
         </p>
         <button onClick={() => navigate('/explore')} className="btn-primary">
-          Explore All 20 Destinations →
+          Explore All 69 Destinations →
         </button>
       </section>
 

@@ -44,9 +44,10 @@ export default function AboutPage() {
           </h1>
           <p className="font-proza text-base text-text-secondary leading-relaxed max-w-2xl">
             <em>Yatra</em> means journey in Hindi and Sanskrit. Yatra360 is a browser-native virtual
-            reality tourism platform that brings 20 of the world's most iconic landmarks —
-            the Eiffel Tower, the Colosseum, the Taj Mahal, the Sydney Opera House and more —
-            to anyone with a web browser. No headset, no download, no cost.
+            reality tourism platform that brings 69 destinations across India and the world —
+            from the Taj Mahal to the Eiffel Tower, the Colosseum to Hampi, the Sydney Opera
+            House to Mehrangarh Fort — to anyone with a web browser. No headset, no download,
+            no cost.
           </p>
           <p className="font-proza text-base text-text-secondary leading-relaxed max-w-2xl">
             AI adapts your tour in real-time: as you dwell on details, click hotspots, and explore
@@ -69,9 +70,9 @@ export default function AboutPage() {
               </div>
             ))}
             <div className="card p-4 space-y-2 flex flex-col justify-center items-center text-center">
-              <p className="font-cinzel font-black text-3xl text-gold">20</p>
+              <p className="font-cinzel font-black text-3xl text-gold">69</p>
               <p className="font-mono text-[10px] tracking-widest text-text-muted uppercase">Total Sites</p>
-              <p className="font-mono text-[10px] text-text-muted">Across 6 continents</p>
+              <p className="font-mono text-[10px] text-text-muted">India + 6 continents</p>
             </div>
           </div>
         </div>
@@ -154,7 +155,7 @@ export default function AboutPage() {
           </h2>
           <div className="flex gap-4 justify-center flex-wrap">
             <button onClick={() => navigate('/explore')} className="btn-primary text-sm">
-              Explore All 20 Destinations →
+              Explore All 69 Destinations →
             </button>
             <button onClick={() => navigate('/tour/taj-mahal-agra')} className="btn-secondary text-sm">
               Try Taj Mahal

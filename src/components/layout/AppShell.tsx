@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import StampToast from '../ui/StampToast'
 import UpdateToast from '../ui/UpdateToast'
+import GlobalVoiceAgent from '../ui/GlobalVoiceAgent'
 import { useAccessibility } from '../../hooks/useAccessibility'
 
 export default function AppShell() {
@@ -16,6 +17,7 @@ export default function AppShell() {
       </main>
       <StampToast />
       <UpdateToast />
+      <GlobalVoiceAgent />
     </div>
   )
 }

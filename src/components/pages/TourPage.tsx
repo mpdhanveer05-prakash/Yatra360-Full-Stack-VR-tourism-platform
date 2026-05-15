@@ -25,9 +25,6 @@ import { usePassportStore } from '../../store/passportStore'
 import FestivalBanner from '../ui/FestivalBanner'
 import { activeFestivals } from '../../lib/festivals'
 import { asiForLocation, nearbyAsi } from '../../lib/asi'
-import { useVoiceAgent } from '../../hooks/useVoiceAgent'
-import VoiceAgentButton from '../ui/VoiceAgentButton'
-import { useUserStore } from '../../store/userStore'
 import locations from '../../data/indiaLocations.json'
 import type { IndiaLocation } from '../../types/location'
 
@@ -287,30 +284,6 @@ export default function TourPage() {
   }, [activeLocation])
 
   const recordVisit = usePassportStore(s => s.recordVisit)
-  const userId      = useUserStore(s => s.userId)
-
-  // Voice agent — STT → intent detection → navigation or guide answer
-  const voice = useVoiceAgent({
-    locationSlug: activeLocation?.wikiSlug ?? '',
-    nodeLabel:    currentNode?.label       ?? activeLocation?.name ?? '',
-    locationId:   activeLocation?.id,
-    userId,
-    locations:    allLocations,
-    onNavigate:   (locId) => navigate(`/tour/${locId}`),
-    // Client-side fallback used when the backend isn't reachable (e.g. Vercel deploy)
-    getFallbackContext: () => activeLocation
-      ? {
-          locationName:  activeLocation.name,
-          description:   activeLocation.description,
-          city:          activeLocation.city,
-          state:         activeLocation.state,
-          category:      activeLocation.category,
-          established:   activeLocation.established,
-          unescoStatus:  activeLocation.unescoStatus,
-          wikiExtract:   summary?.extract,
-        }
-      : null,
-  })
 
   useEffect(() => {
     const loc = allLocations.find(l => l.id === locationId)
@@ -507,21 +480,7 @@ export default function TourPage() {
 
         {/* Guide chat available in both viewer modes */}
         <GuideChat />
-
-        {/* Voice agent — floating mic, bottom-LEFT above guide chat toggle
-            (left side keeps clear of Google Street View's bottom-right controls) */}
-        <div className="absolute bottom-24 left-4 z-30">
-          <VoiceAgentButton
-            state={voice.state}
-            transcript={voice.transcript}
-            answer={voice.answer}
-            errorMsg={voice.errorMsg}
-            supported={voice.supported}
-            onStart={voice.start}
-            onStop={voice.stop}
-            onReset={voice.reset}
-          />
-        </div>
+        {/* Voice agent is now mounted globally in AppShell — see GlobalVoiceAgent.tsx */}
       </div>
     </div>
   )

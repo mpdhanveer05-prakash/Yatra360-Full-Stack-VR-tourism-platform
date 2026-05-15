@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUserStore } from '../../store/userStore'
+import { useAuthStore } from '../../store/authStore'
 import { useAIStore } from '../../store/aiStore'
 import { usePassportStore } from '../../store/passportStore'
 import PassportPanel from '../ui/PassportPanel'
@@ -78,6 +79,30 @@ function formatMs(ms: number): string {
   return `${m}m ${s % 60}s`
 }
 
+function UserHeader() {
+  const user = useAuthStore(s => s.user)
+  return (
+    <div className="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p className="font-mono text-xs tracking-[0.3em] text-saffron uppercase mb-1">Personal Analytics</p>
+        <h1 className="font-cinzel text-2xl text-cream">
+          {user ? (
+            <>Welcome back, <span className="text-gold">{user.displayName || user.username}</span></>
+          ) : (
+            <>Your Journey</>
+          )}
+        </h1>
+        {user && (
+          <p className="font-mono text-[11px] text-text-muted mt-1">
+            <span className="text-text-secondary">@{user.username}</span>
+            {user.email ? ` · ${user.email}` : ''}
+          </p>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function DashboardPage() {
   const navigate   = useNavigate()
   const { sessionHistory, preferenceVector } = useUserStore()
@@ -125,10 +150,7 @@ export default function DashboardPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-8">
 
         {/* header */}
-        <div>
-          <p className="font-mono text-xs tracking-[0.3em] text-saffron uppercase mb-1">Personal Analytics</p>
-          <h1 className="font-cinzel text-2xl text-cream">Your Journey</h1>
-        </div>
+        <UserHeader />
 
         {/* tabs */}
         <div role="tablist" aria-label="Dashboard sections" className="flex gap-1 border-b border-[var(--border)]">

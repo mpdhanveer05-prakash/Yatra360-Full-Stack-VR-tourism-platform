@@ -10,6 +10,8 @@ interface Props {
   onStart:    () => void
   onStop:     () => void
   onReset:    () => void
+  /** Which side the popup bubble extends from. Default 'right' (button on screen-LEFT). */
+  bubbleSide?: 'left' | 'right'
 }
 
 // Sound-wave bars — animated when speaking, static otherwise
@@ -66,6 +68,7 @@ const STATE_STYLES: Record<VoiceAgentState, { ring: string; bg: string; label: s
 
 export default function VoiceAgentButton({
   state, transcript, answer, errorMsg, supported, onStart, onStop, onReset,
+  bubbleSide = 'right',
 }: Props) {
   const bubbleRef = useRef<HTMLDivElement>(null)
 
@@ -102,14 +105,14 @@ export default function VoiceAgentButton({
       {showBubble && (
         <div
           ref={bubbleRef}
-          className="
-            absolute bottom-[calc(100%+12px)] right-0
+          className={`
+            absolute bottom-[calc(100%+12px)] ${bubbleSide === 'right' ? 'left-0' : 'right-0'}
             w-72 max-h-64 overflow-y-auto
             bg-bg-surface/97 backdrop-blur-md
             border border-gold/30 rounded-sm shadow-2xl
             p-3 space-y-2
             animate-slide-up
-          "
+          `}
         >
           {/* User question */}
           {transcript && (
@@ -146,8 +149,8 @@ export default function VoiceAgentButton({
             </div>
           )}
 
-          {/* Triangle pointer */}
-          <div className="absolute -bottom-[6px] right-5 w-3 h-3 bg-bg-surface/97 border-r border-b border-gold/30 rotate-45" />
+          {/* Triangle pointer — anchored to the side opposite the bubble extension */}
+          <div className={`absolute -bottom-[6px] ${bubbleSide === 'right' ? 'left-5' : 'right-5'} w-3 h-3 bg-bg-surface/97 border-r border-b border-gold/30 rotate-45`} />
         </div>
       )}
 

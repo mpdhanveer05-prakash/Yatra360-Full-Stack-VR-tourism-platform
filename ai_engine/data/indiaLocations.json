@@ -1,14 +1,842 @@
 [
   {
+    "id": "eiffel-tower-paris",
+    "name": "Eiffel Tower",
+    "city": "Paris",
+    "state": "France",
+    "region": "europe",
+    "category": "modern",
+    "lat": 48.8584,
+    "lng": 2.2945,
+    "description": "The Eiffel Tower is a 330-metre wrought-iron lattice tower designed by Gustave Eiffel for the 1889 World's Fair. Once mocked by Parisian artists, it is now the most-visited paid monument on Earth and France's defining symbol.",
+    "established": "1889",
+    "unescoStatus": true,
+    "bestSeason": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "paris",
+      "iron",
+      "tower",
+      "world-icon",
+      "engineering",
+      "panorama"
+    ],
+    "wikiSlug": "Eiffel_Tower",
+    "wikimediaCategory": "Eiffel Tower",
+    "features": {
+      "historical": 0.9,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.85,
+      "educational": 0.9,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.6,
+      "modern": 0.9
+    },
+    "nodes": [
+      {
+        "id": "ef-base",
+        "label": "Champ de Mars (Base)",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?eiffel+tower+base+paris",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?eiffel+tower+paris",
+        "connectedNodes": [
+          "ef-trocadero"
+        ],
+        "hotspots": [
+          {
+            "id": "ef-1",
+            "type": "navigation",
+            "azimuth": 30,
+            "elevation": 0,
+            "label": "Cross to Trocadéro",
+            "targetNodeId": "ef-trocadero"
+          },
+          {
+            "id": "ef-2",
+            "type": "info",
+            "azimuth": 120,
+            "elevation": 15,
+            "label": "Iron Lattice",
+            "content": "Made of 18,038 puddle-iron pieces joined by 2.5 million rivets — a marvel of late-19th-century engineering."
+          }
+        ]
+      },
+      {
+        "id": "ef-trocadero",
+        "label": "Trocadéro Gardens",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?trocadero+paris+view",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?trocadero+paris",
+        "connectedNodes": [
+          "ef-base"
+        ],
+        "hotspots": [
+          {
+            "id": "ef-3",
+            "type": "navigation",
+            "azimuth": 210,
+            "elevation": 0,
+            "label": "Walk back to base",
+            "targetNodeId": "ef-base"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "colosseum-rome",
+    "name": "Colosseum",
+    "city": "Rome",
+    "state": "Italy",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 41.8902,
+    "lng": 12.4922,
+    "description": "The Colosseum is the largest ancient amphitheatre ever built, completed under Emperor Titus in 80 CE. It once seated up to 80,000 spectators for gladiatorial contests, mock sea battles, and public spectacles.",
+    "established": "80 CE",
+    "unescoStatus": true,
+    "bestSeason": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "rome",
+      "roman",
+      "amphitheatre",
+      "gladiators",
+      "ancient",
+      "wonder"
+    ],
+    "wikiSlug": "Colosseum",
+    "wikimediaCategory": "Colosseum",
+    "features": {
+      "historical": 1.0,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.8,
+      "educational": 1.0,
+      "adventurous": 0.3,
+      "ancient": 1.0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 0
+    },
+    "nodes": [
+      {
+        "id": "col-arena",
+        "label": "Arena Floor",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?colosseum+interior",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?colosseum+rome",
+        "connectedNodes": [],
+        "hotspots": [
+          {
+            "id": "col-1",
+            "type": "info",
+            "azimuth": 90,
+            "elevation": 10,
+            "label": "Hypogeum",
+            "content": "Beneath the arena floor lay a two-level subterranean network of tunnels, animal cages, and lifts that delivered combatants up through trapdoors."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "leaning-tower-pisa",
+    "name": "Leaning Tower of Pisa",
+    "city": "Pisa",
+    "state": "Italy",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 43.723,
+    "lng": 10.3966,
+    "description": "The Leaning Tower is the freestanding bell tower of Pisa Cathedral, famous for its near-four-degree tilt caused by an unstable foundation laid in 1173. Stabilisation work between 1990 and 2001 corrected its lean by half a degree.",
+    "established": "1372",
+    "unescoStatus": true,
+    "bestSeason": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "pisa",
+      "tower",
+      "medieval",
+      "marble",
+      "miracle"
+    ],
+    "wikiSlug": "Leaning_Tower_of_Pisa",
+    "wikimediaCategory": "Leaning Tower of Pisa",
+    "features": {
+      "historical": 0.9,
+      "architectural": 1.0,
+      "religious": 0.4,
+      "natural": 0,
+      "cultural": 0.85,
+      "artistic": 0.7,
+      "educational": 0.85,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 1.0,
+      "colonial": 0,
+      "modern": 0
+    },
+    "nodes": [
+      {
+        "id": "pisa-square",
+        "label": "Piazza dei Miracoli",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?leaning+tower+pisa",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?pisa+italy",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "sagrada-familia-barcelona",
+    "name": "Sagrada Família",
+    "city": "Barcelona",
+    "state": "Spain",
+    "region": "europe",
+    "category": "spiritual",
+    "lat": 41.4036,
+    "lng": 2.1744,
+    "description": "Antoni Gaudí's unfinished basilica is a UNESCO World Heritage Site begun in 1882 and still under construction. Its forest-like nave and twisting towers fuse Gothic, Art Nouveau, and biological forms into a singular Catalan masterpiece.",
+    "established": "1882 (ongoing)",
+    "unescoStatus": true,
+    "bestSeason": [
+      "March",
+      "April",
+      "October",
+      "November"
+    ],
+    "tags": [
+      "gaudi",
+      "barcelona",
+      "basilica",
+      "modernisme",
+      "art-nouveau",
+      "spires"
+    ],
+    "wikiSlug": "Sagrada_Família",
+    "wikimediaCategory": "Sagrada Família",
+    "features": {
+      "historical": 0,
+      "architectural": 1.0,
+      "religious": 0.9,
+      "natural": 0,
+      "cultural": 0.95,
+      "artistic": 1.0,
+      "educational": 0.85,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.2,
+      "modern": 0.8
+    },
+    "nodes": [
+      {
+        "id": "sf-front",
+        "label": "Nativity Façade",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?sagrada+familia",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?barcelona",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "big-ben-london",
+    "name": "Big Ben & Westminster",
+    "city": "London",
+    "state": "United Kingdom",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 51.4994,
+    "lng": -0.1245,
+    "description": "The Elizabeth Tower — popularly Big Ben — houses the Great Bell of Westminster, completed in 1859. Together with the Palace of Westminster it forms the seat of British government and a UNESCO World Heritage Site since 1987.",
+    "established": "1859",
+    "unescoStatus": true,
+    "bestSeason": [
+      "May",
+      "June",
+      "July",
+      "September"
+    ],
+    "tags": [
+      "london",
+      "clock",
+      "westminster",
+      "parliament",
+      "victorian"
+    ],
+    "wikiSlug": "Big_Ben",
+    "wikimediaCategory": "Elizabeth Tower",
+    "features": {
+      "historical": 0.95,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.7,
+      "educational": 0.9,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.85,
+      "modern": 0.5
+    },
+    "nodes": [
+      {
+        "id": "bb-bridge",
+        "label": "Westminster Bridge",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?big+ben+london",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?london",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "tower-bridge-london",
+    "name": "Tower Bridge",
+    "city": "London",
+    "state": "United Kingdom",
+    "region": "europe",
+    "category": "modern",
+    "lat": 51.5055,
+    "lng": -0.0754,
+    "description": "Tower Bridge is a combined bascule and suspension bridge over the Thames, completed in 1894. Its Gothic Revival towers and twin lifting roadways have become an enduring icon of Victorian engineering.",
+    "established": "1894",
+    "unescoStatus": false,
+    "bestSeason": [
+      "May",
+      "June",
+      "July",
+      "September"
+    ],
+    "tags": [
+      "london",
+      "thames",
+      "bascule",
+      "victorian",
+      "engineering"
+    ],
+    "wikiSlug": "Tower_Bridge",
+    "wikimediaCategory": "Tower Bridge",
+    "features": {
+      "historical": 0.85,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 0.85,
+      "artistic": 0.6,
+      "educational": 0.8,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.85,
+      "modern": 0.7
+    },
+    "nodes": [
+      {
+        "id": "tb-deck",
+        "label": "Bridge Deck",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?tower+bridge+london",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?london",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "stonehenge-uk",
+    "name": "Stonehenge",
+    "city": "Wiltshire",
+    "state": "United Kingdom",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 51.1789,
+    "lng": -1.8262,
+    "description": "Stonehenge is a prehistoric stone circle built in stages between 3000 and 2000 BCE on Salisbury Plain. Its alignment with the solstices and the origin of its bluestones from Wales remain partly unexplained.",
+    "established": "~3000 BCE",
+    "unescoStatus": true,
+    "bestSeason": [
+      "May",
+      "June",
+      "July"
+    ],
+    "tags": [
+      "neolithic",
+      "megalith",
+      "salisbury",
+      "solstice",
+      "mystery"
+    ],
+    "wikiSlug": "Stonehenge",
+    "wikimediaCategory": "Stonehenge",
+    "features": {
+      "historical": 1.0,
+      "architectural": 0.85,
+      "religious": 0.6,
+      "natural": 0.4,
+      "cultural": 0.95,
+      "artistic": 0,
+      "educational": 1.0,
+      "adventurous": 0.4,
+      "ancient": 1.0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 0
+    },
+    "nodes": [
+      {
+        "id": "sh-ring",
+        "label": "Sarsen Ring",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?stonehenge",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?stonehenge+england",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "brandenburg-gate-berlin",
+    "name": "Brandenburg Gate",
+    "city": "Berlin",
+    "state": "Germany",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "description": "The Brandenburg Gate is an 18th-century neoclassical triumphal arch crowned by the Quadriga statue. From the Cold War division of the city to reunification celebrations in 1989, it has stood as Germany's defining political monument.",
+    "established": "1791",
+    "unescoStatus": false,
+    "bestSeason": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "berlin",
+      "neoclassical",
+      "triumphal-arch",
+      "reunification",
+      "history"
+    ],
+    "wikiSlug": "Brandenburg_Gate",
+    "wikimediaCategory": "Brandenburg Gate",
+    "features": {
+      "historical": 1.0,
+      "architectural": 0.95,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.8,
+      "educational": 0.95,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.7,
+      "modern": 0.6
+    },
+    "nodes": [
+      {
+        "id": "bg-pariser",
+        "label": "Pariser Platz",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?brandenburg+gate+berlin",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?berlin",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "acropolis-athens",
+    "name": "Acropolis of Athens",
+    "city": "Athens",
+    "state": "Greece",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 37.9715,
+    "lng": 23.7257,
+    "description": "The Acropolis is the rocky citadel above Athens crowned by the 5th-century BCE Parthenon — the defining monument of Classical Greek architecture and the symbolic birthplace of Western civilization.",
+    "established": "447 BCE",
+    "unescoStatus": true,
+    "bestSeason": [
+      "April",
+      "May",
+      "October"
+    ],
+    "tags": [
+      "athens",
+      "parthenon",
+      "classical",
+      "greek",
+      "philosophy"
+    ],
+    "wikiSlug": "Acropolis_of_Athens",
+    "wikimediaCategory": "Acropolis of Athens",
+    "features": {
+      "historical": 1.0,
+      "architectural": 1.0,
+      "religious": 0.7,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.95,
+      "educational": 1.0,
+      "adventurous": 0,
+      "ancient": 1.0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 0
+    },
+    "nodes": [
+      {
+        "id": "ac-parth",
+        "label": "Parthenon",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?parthenon+acropolis",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?athens+greece",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "trevi-fountain-rome",
+    "name": "Trevi Fountain",
+    "city": "Rome",
+    "state": "Italy",
+    "region": "europe",
+    "category": "heritage",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "description": "Completed in 1762, the Trevi Fountain is the largest Baroque fountain in Rome — a 26-metre-wide Travertine cascade designed by Nicola Salvi at the terminus of the ancient Aqua Virgo aqueduct.",
+    "established": "1762",
+    "unescoStatus": false,
+    "bestSeason": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "rome",
+      "baroque",
+      "fountain",
+      "salvi",
+      "travertine"
+    ],
+    "wikiSlug": "Trevi_Fountain",
+    "wikimediaCategory": "Trevi Fountain",
+    "features": {
+      "historical": 0.9,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 0.95,
+      "artistic": 1.0,
+      "educational": 0.85,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.5,
+      "modern": 0
+    },
+    "nodes": [
+      {
+        "id": "tf-front",
+        "label": "Fountain Plaza",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?trevi+fountain+rome",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?rome+italy",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "statue-of-liberty-nyc",
+    "name": "Statue of Liberty",
+    "city": "New York",
+    "state": "United States",
+    "region": "north-america",
+    "category": "heritage",
+    "lat": 40.6892,
+    "lng": -74.0445,
+    "description": "Liberty Enlightening the World, a gift from France in 1886, stands 93 metres tall on Liberty Island in New York Harbour. The neoclassical copper figure has welcomed ships into America for nearly 140 years.",
+    "established": "1886",
+    "unescoStatus": true,
+    "bestSeason": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "new-york",
+      "liberty-island",
+      "neoclassical",
+      "copper",
+      "immigration"
+    ],
+    "wikiSlug": "Statue_of_Liberty",
+    "wikimediaCategory": "Statue of Liberty",
+    "features": {
+      "historical": 0.95,
+      "architectural": 0.9,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.85,
+      "educational": 0.95,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.7,
+      "modern": 0.5
+    },
+    "nodes": [
+      {
+        "id": "sol-base",
+        "label": "Pedestal Plaza",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?statue+of+liberty",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?new+york",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "times-square-nyc",
+    "name": "Times Square",
+    "city": "New York",
+    "state": "United States",
+    "region": "north-america",
+    "category": "modern",
+    "lat": 40.758,
+    "lng": -73.9855,
+    "description": "Times Square is the bow-tie-shaped intersection at Broadway and 7th Avenue in Midtown Manhattan, defined by its illuminated billboards and 24-hour neon glow. It hosts the iconic New Year's Eve ball drop watched by a billion people worldwide.",
+    "established": "1904",
+    "unescoStatus": false,
+    "bestSeason": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "new-york",
+      "broadway",
+      "neon",
+      "billboards",
+      "manhattan"
+    ],
+    "wikiSlug": "Times_Square",
+    "wikimediaCategory": "Times Square",
+    "features": {
+      "historical": 0.5,
+      "architectural": 0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0.7,
+      "educational": 0.4,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 1.0
+    },
+    "nodes": [
+      {
+        "id": "ts-crossroads",
+        "label": "The Crossroads",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?times+square+new+york",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?new+york",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "central-park-nyc",
+    "name": "Central Park",
+    "city": "New York",
+    "state": "United States",
+    "region": "north-america",
+    "category": "nature",
+    "lat": 40.7829,
+    "lng": -73.9654,
+    "description": "Central Park is an 843-acre urban park in Manhattan designed by Frederick Law Olmsted and Calvert Vaux in 1858. Its meadows, lakes, woods, and the Bethesda Terrace form one of the most visited urban parks on Earth.",
+    "established": "1858",
+    "unescoStatus": false,
+    "bestSeason": [
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "tags": [
+      "new-york",
+      "manhattan",
+      "olmsted",
+      "park",
+      "lake"
+    ],
+    "wikiSlug": "Central_Park",
+    "wikimediaCategory": "Central Park",
+    "features": {
+      "historical": 0.7,
+      "architectural": 0,
+      "religious": 0,
+      "natural": 1.0,
+      "cultural": 0.9,
+      "artistic": 0.7,
+      "educational": 0.8,
+      "adventurous": 0.5,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 0.7
+    },
+    "nodes": [
+      {
+        "id": "cp-bethesda",
+        "label": "Bethesda Terrace",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?central+park+bethesda",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?central+park+new+york",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "brooklyn-bridge-nyc",
+    "name": "Brooklyn Bridge",
+    "city": "New York",
+    "state": "United States",
+    "region": "north-america",
+    "category": "modern",
+    "lat": 40.7061,
+    "lng": -73.9969,
+    "description": "Completed in 1883, the Brooklyn Bridge was the world's first steel-wire suspension bridge and the longest at the time. It still carries pedestrians, cyclists, and traffic between Manhattan and Brooklyn across the East River.",
+    "established": "1883",
+    "unescoStatus": false,
+    "bestSeason": [
+      "April",
+      "May",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "new-york",
+      "brooklyn",
+      "suspension",
+      "east-river",
+      "engineering"
+    ],
+    "wikiSlug": "Brooklyn_Bridge",
+    "wikimediaCategory": "Brooklyn Bridge",
+    "features": {
+      "historical": 0.85,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 0.9,
+      "artistic": 0.6,
+      "educational": 0.85,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0.6,
+      "modern": 0.9
+    },
+    "nodes": [
+      {
+        "id": "bb-deck",
+        "label": "Pedestrian Promenade",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?brooklyn+bridge",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?new+york",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "golden-gate-bridge-sf",
+    "name": "Golden Gate Bridge",
+    "city": "San Francisco",
+    "state": "United States",
+    "region": "north-america",
+    "category": "modern",
+    "lat": 37.8199,
+    "lng": -122.4783,
+    "description": "The Golden Gate Bridge is a 2.7-kilometre Art Deco suspension bridge linking San Francisco to Marin County. When it opened in 1937 it was the longest and tallest suspension bridge in the world; its distinctive International Orange paint is now an icon of California.",
+    "established": "1937",
+    "unescoStatus": false,
+    "bestSeason": [
+      "May",
+      "June",
+      "September",
+      "October"
+    ],
+    "tags": [
+      "san-francisco",
+      "suspension",
+      "art-deco",
+      "california",
+      "pacific"
+    ],
+    "wikiSlug": "Golden_Gate_Bridge",
+    "wikimediaCategory": "Golden Gate Bridge",
+    "features": {
+      "historical": 0.7,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 0.85,
+      "artistic": 0.7,
+      "educational": 0.8,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 1.0
+    },
+    "nodes": [
+      {
+        "id": "gg-vista",
+        "label": "Vista Point",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?golden+gate+bridge",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?san+francisco",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
     "id": "taj-mahal-agra",
     "name": "Taj Mahal",
     "city": "Agra",
-    "state": "Uttar Pradesh",
-    "region": "north",
+    "state": "India",
+    "region": "asia",
     "category": "heritage",
     "lat": 27.1751,
     "lng": 78.0421,
-    "description": "The Taj Mahal is an ivory-white marble mausoleum built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal. Completed in 1643 CE, it is India's most iconic UNESCO World Heritage Site and a supreme example of Mughal architecture.",
+    "description": "The Taj Mahal is an ivory-white marble mausoleum built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal. Completed in 1643 CE, it is one of the seven wonders of the modern world.",
     "established": "1643 CE",
     "unescoStatus": true,
     "bestSeason": [
@@ -22,9 +850,7 @@
       "marble",
       "mausoleum",
       "world-wonder",
-      "symmetry",
-      "gardens",
-      "love"
+      "symmetry"
     ],
     "wikiSlug": "Taj_Mahal",
     "wikimediaCategory": "Taj Mahal",
@@ -32,1414 +858,234 @@
       "historical": 0.95,
       "architectural": 1.0,
       "religious": 0.5,
-      "natural": 0.2,
+      "natural": 0,
       "cultural": 0.95,
       "artistic": 1.0,
       "educational": 0.9,
-      "adventurous": 0.1,
-      "ancient": 0.0,
+      "adventurous": 0,
+      "ancient": 0,
       "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
+      "colonial": 0,
+      "modern": 0
     },
     "nodes": [
       {
-        "id": "taj-great-gate",
-        "label": "Great Gate (Darwaza-i-Rauza)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?taj+mahal+gate+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?taj+mahal+india",
-        "connectedNodes": [
-          "taj-main-lawn"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-tg-1",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Enter Main Lawn",
-            "targetNodeId": "taj-main-lawn"
-          },
-          {
-            "id": "hs-tg-2",
-            "type": "info",
-            "azimuth": 90,
-            "elevation": 15,
-            "label": "Quranic Calligraphy",
-            "content": "The arched entrance is adorned with verses from the Quran inlaid in black marble, a masterpiece of Pietra dura craftsmanship."
-          }
-        ]
-      },
-      {
-        "id": "taj-main-lawn",
-        "label": "Main Lawn & Reflecting Pool",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?taj+mahal+garden+reflection+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?taj+mahal+garden+india",
-        "connectedNodes": [
-          "taj-great-gate",
-          "taj-mausoleum"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-tl-1",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Approach Mausoleum",
-            "targetNodeId": "taj-mausoleum"
-          },
-          {
-            "id": "hs-tl-2",
-            "type": "navigation",
-            "azimuth": 180,
-            "elevation": 0,
-            "label": "Return to Gate",
-            "targetNodeId": "taj-great-gate"
-          },
-          {
-            "id": "hs-tl-3",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 5,
-            "label": "Hauz-i-Kausar Pool",
-            "content": "The central reflecting pool divides the gardens into four quadrants symbolising the four rivers of paradise in Islamic theology."
-          }
-        ]
-      },
-      {
-        "id": "taj-mausoleum",
-        "label": "Mausoleum Platform",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?taj+mahal+marble+closeup+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?taj+mahal+closeup",
-        "connectedNodes": [
-          "taj-main-lawn"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-tm-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 45,
-            "label": "Central Dome",
-            "content": "The main dome rises 73 metres and is surrounded by four chattris. The double-shell construction was an architectural innovation of the era."
-          },
-          {
-            "id": "hs-tm-2",
-            "type": "info",
-            "azimuth": 90,
-            "elevation": 5,
-            "label": "Pietra Dura Inlay",
-            "content": "Thousands of semi-precious stones — lapis lazuli, turquoise, jade, and carnelian — are inlaid into white marble in elaborate floral patterns."
-          }
-        ]
+        "id": "tj-gate",
+        "label": "Great Gate (Darwaza)",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?taj+mahal",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?taj+mahal+agra",
+        "connectedNodes": [],
+        "hotspots": []
       }
     ]
   },
   {
-    "id": "qutb-minar-delhi",
-    "name": "Qutb Minar",
-    "city": "New Delhi",
-    "state": "Delhi",
-    "region": "north",
-    "category": "heritage",
-    "lat": 28.5244,
-    "lng": 77.1855,
-    "description": "The Qutb Minar is a 73-metre soaring minaret of red sandstone begun by Qutb-ud-din Aibak in 1193 CE. It forms the centrepiece of the Qutb complex, India's oldest surviving mosque and a UNESCO World Heritage Site.",
-    "established": "1193 CE",
+    "id": "tokyo-tower",
+    "name": "Tokyo Tower",
+    "city": "Tokyo",
+    "state": "Japan",
+    "region": "asia",
+    "category": "modern",
+    "lat": 35.6586,
+    "lng": 139.7454,
+    "description": "Tokyo Tower is a 333-metre red and white communications and observation tower in the Minato ward, modelled on the Eiffel Tower but taller. Completed in 1958, it became the symbol of post-war Japan's recovery and modernity.",
+    "established": "1958",
+    "unescoStatus": false,
+    "bestSeason": [
+      "March",
+      "April",
+      "October",
+      "November"
+    ],
+    "tags": [
+      "tokyo",
+      "minato",
+      "communications",
+      "observation",
+      "post-war"
+    ],
+    "wikiSlug": "Tokyo_Tower",
+    "wikimediaCategory": "Tokyo Tower",
+    "features": {
+      "historical": 0,
+      "architectural": 0.9,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 0.9,
+      "artistic": 0,
+      "educational": 0.7,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 1.0
+    },
+    "nodes": [
+      {
+        "id": "tt-base",
+        "label": "Shiba Park",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?tokyo+tower",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?tokyo",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "shibuya-crossing-tokyo",
+    "name": "Shibuya Crossing",
+    "city": "Tokyo",
+    "state": "Japan",
+    "region": "asia",
+    "category": "modern",
+    "lat": 35.6595,
+    "lng": 139.7005,
+    "description": "Shibuya Scramble Crossing is the busiest pedestrian intersection in the world, where up to 3,000 people stream across in every signal cycle. Surrounded by jumbo screens and neon façades, it is the defining image of contemporary Tokyo.",
+    "established": "1973",
+    "unescoStatus": false,
+    "bestSeason": [
+      "March",
+      "April",
+      "October",
+      "November"
+    ],
+    "tags": [
+      "tokyo",
+      "shibuya",
+      "scramble",
+      "pedestrian",
+      "neon"
+    ],
+    "wikiSlug": "Shibuya_Crossing",
+    "wikimediaCategory": "Shibuya Crossing",
+    "features": {
+      "historical": 0,
+      "architectural": 0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 0,
+      "educational": 0.5,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 1.0
+    },
+    "nodes": [
+      {
+        "id": "sb-scramble",
+        "label": "The Scramble",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?shibuya+crossing+tokyo",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?tokyo+japan",
+        "connectedNodes": [],
+        "hotspots": []
+      }
+    ]
+  },
+  {
+    "id": "sydney-opera-house",
+    "name": "Sydney Opera House",
+    "city": "Sydney",
+    "state": "Australia",
+    "region": "oceania",
+    "category": "modern",
+    "lat": -33.8568,
+    "lng": 151.2153,
+    "description": "The Sydney Opera House is a multi-venue performing arts centre with a series of precast concrete shells that sweep above Sydney Harbour. Designed by Jørn Utzon and completed in 1973, it is a 20th-century architectural masterpiece and a UNESCO World Heritage Site.",
+    "established": "1973",
     "unescoStatus": true,
     "bestSeason": [
+      "September",
       "October",
-      "November",
       "March",
       "April"
     ],
     "tags": [
-      "islamic",
-      "minaret",
-      "sandstone",
-      "sultanate",
-      "iron-pillar",
-      "mosque"
+      "sydney",
+      "harbour",
+      "utzon",
+      "concrete",
+      "opera",
+      "expressionism"
     ],
-    "wikiSlug": "Qutb_Minar",
-    "wikimediaCategory": "Qutb Minar",
+    "wikiSlug": "Sydney_Opera_House",
+    "wikimediaCategory": "Sydney Opera House",
     "features": {
-      "historical": 0.95,
-      "architectural": 0.95,
-      "religious": 0.7,
-      "natural": 0.1,
-      "cultural": 0.85,
-      "artistic": 0.9,
-      "educational": 0.9,
-      "adventurous": 0.1,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
+      "historical": 0,
+      "architectural": 1.0,
+      "religious": 0,
+      "natural": 0,
+      "cultural": 1.0,
+      "artistic": 1.0,
+      "educational": 0.85,
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 1.0
     },
     "nodes": [
       {
-        "id": "qutb-entrance",
-        "label": "Complex Entrance",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?qutb+minar+delhi+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?qutb+minar+india",
-        "connectedNodes": [
-          "qutb-minaret-base"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-qe-1",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Walk to Minaret",
-            "targetNodeId": "qutb-minaret-base"
-          },
-          {
-            "id": "hs-qe-2",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 10,
-            "label": "Quwwat-ul-Islam Mosque",
-            "content": "India's earliest mosque, built using materials from 27 Hindu and Jain temples demolished by Qutb-ud-din Aibak after the Delhi Sultanate's victory."
-          }
-        ]
-      },
-      {
-        "id": "qutb-minaret-base",
-        "label": "Minaret Base & Iron Pillar",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?qutb+minar+base+close",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?qutb+complex+india",
-        "connectedNodes": [
-          "qutb-entrance"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-qb-1",
-            "type": "info",
-            "azimuth": 45,
-            "elevation": 60,
-            "label": "Five-Storey Minaret",
-            "content": "The minaret's five storeys each have a different design — alternating angular and rounded fluting, topped by carved stalactite corbels."
-          },
-          {
-            "id": "hs-qb-2",
-            "type": "info",
-            "azimuth": 180,
-            "elevation": 5,
-            "label": "7th-century Iron Pillar",
-            "content": "A 7-metre iron pillar from the Gupta period (c. 375–415 CE) stands rust-free for over 1600 years, a marvel of ancient metallurgy still not fully explained."
-          }
-        ]
+        "id": "so-forecourt",
+        "label": "Forecourt",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?sydney+opera+house",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?sydney",
+        "connectedNodes": [],
+        "hotspots": []
       }
     ]
   },
   {
-    "id": "red-fort-delhi",
-    "name": "Red Fort",
-    "city": "New Delhi",
-    "state": "Delhi",
-    "region": "north",
-    "category": "heritage",
-    "lat": 28.6562,
-    "lng": 77.241,
-    "description": "The Red Fort is a massive Mughal fortification of red sandstone built by Emperor Shah Jahan as his palace and seat of government in 1648 CE. Every year on Independence Day, India's Prime Minister hoists the national flag from its Lahori Gate.",
-    "established": "1648 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "February"
-    ],
-    "tags": [
-      "mughal",
-      "fort",
-      "sandstone",
-      "palace",
-      "independence",
-      "delhi"
-    ],
-    "wikiSlug": "Red_Fort",
-    "wikimediaCategory": "Red Fort, Delhi",
-    "features": {
-      "historical": 0.95,
-      "architectural": 0.9,
-      "religious": 0.3,
-      "natural": 0.1,
-      "cultural": 0.95,
-      "artistic": 0.85,
-      "educational": 0.9,
-      "adventurous": 0.2,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.3,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "redfort-lahori-gate",
-        "label": "Lahori Gate",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?red+fort+delhi+gate+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?red+fort+delhi+india",
-        "connectedNodes": [
-          "redfort-diwan-i-am"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-rf-1",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Enter Chatta Chowk",
-            "targetNodeId": "redfort-diwan-i-am"
-          },
-          {
-            "id": "hs-rf-2",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 30,
-            "label": "Lahori Gate",
-            "content": "The principal entrance faces Lahore (now Pakistan). Its balcony is the site of the Prime Minister's Independence Day address every 15th August."
-          }
-        ]
-      },
-      {
-        "id": "redfort-diwan-i-am",
-        "label": "Diwan-i-Am (Hall of Public Audience)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?red+fort+hall+mughal+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?red+fort+interior+india",
-        "connectedNodes": [
-          "redfort-lahori-gate"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-rda-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 10,
-            "label": "Marble Throne Dais",
-            "content": "Shah Jahan received public petitions here. The marble dais once held the legendary Peacock Throne, later looted by Nadir Shah in 1739."
-          },
-          {
-            "id": "hs-rda-2",
-            "type": "info",
-            "azimuth": 180,
-            "elevation": 5,
-            "label": "Arcade Columns",
-            "content": "Sixty columns of red sandstone support the arcade where citizens would gather. Each column is a study in geometric precision."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "hampi-karnataka",
-    "name": "Hampi Ruins",
-    "city": "Hampi",
-    "state": "Karnataka",
-    "region": "south",
-    "category": "heritage",
-    "lat": 15.335,
-    "lng": 76.46,
-    "description": "Hampi is the ruined capital of the Vijayanagara Empire, once one of the richest cities in the world. Spread across boulder-strewn landscapes along the Tungabhadra River, its temples, elephant stables, and royal enclosures form a surreal UNESCO World Heritage Site.",
-    "established": "1336 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "vijayanagara",
-      "ruins",
-      "boulders",
-      "dravidian",
-      "empire",
-      "tungabhadra"
-    ],
-    "wikiSlug": "Hampi",
-    "wikimediaCategory": "Hampi",
-    "features": {
-      "historical": 1.0,
-      "architectural": 0.9,
-      "religious": 0.7,
-      "natural": 0.6,
-      "cultural": 0.85,
-      "artistic": 0.9,
-      "educational": 0.95,
-      "adventurous": 0.6,
-      "ancient": 0.2,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "hampi-virupaksha",
-        "label": "Virupaksha Temple",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?hampi+temple+karnataka+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?hampi+india",
-        "connectedNodes": [
-          "hampi-vittala"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-hv-1",
-            "type": "navigation",
-            "azimuth": 90,
-            "elevation": 0,
-            "label": "Walk to Vittala Temple",
-            "targetNodeId": "hampi-vittala"
-          },
-          {
-            "id": "hs-hv-2",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 40,
-            "label": "50-metre Gopuram",
-            "content": "The main tower of Virupaksha Temple rises 50 metres and is one of the oldest functioning temples in Hampi, dedicated to Shiva. The temple has been in continuous worship for over 700 years."
-          }
-        ]
-      },
-      {
-        "id": "hampi-vittala",
-        "label": "Vittala Temple & Stone Chariot",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?hampi+vittala+stone+chariot",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?hampi+vittala+india",
-        "connectedNodes": [
-          "hampi-virupaksha"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-hvt-1",
-            "type": "info",
-            "azimuth": 45,
-            "elevation": 10,
-            "label": "Stone Chariot of Garuda",
-            "content": "The iconic stone chariot with rotating stone wheels is a shrine to Garuda and is the symbol on India's 50-rupee note."
-          },
-          {
-            "id": "hs-hvt-2",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 5,
-            "label": "Musical Pillars",
-            "content": "The 56 musical pillars of the Ranga Mandapa produce different musical notes when tapped — a feat of acoustic engineering from the 15th century."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mahabalipuram-shore-temple",
-    "name": "Shore Temple, Mahabalipuram",
-    "city": "Mahabalipuram",
-    "state": "Tamil Nadu",
-    "region": "south",
-    "category": "heritage",
-    "lat": 12.6269,
-    "lng": 80.1927,
-    "description": "The Shore Temple at Mahabalipuram is one of the oldest structural stone temples in South India, built by Pallava king Narasimhavarman II around 700 CE. It stands at the edge of the Bay of Bengal and is part of a UNESCO site complex that also includes the famous Pancha Rathas.",
-    "established": "700 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "pallava",
-      "dravidian",
-      "coastal",
-      "granite",
-      "ancient",
-      "bay-of-bengal"
-    ],
-    "wikiSlug": "Shore_Temple",
-    "wikimediaCategory": "Shore Temple",
-    "features": {
-      "historical": 0.95,
-      "architectural": 0.9,
-      "religious": 0.8,
-      "natural": 0.6,
-      "cultural": 0.85,
-      "artistic": 0.9,
-      "educational": 0.9,
-      "adventurous": 0.3,
-      "ancient": 1.0,
-      "medieval": 0.3,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "shore-temple-seafront",
-        "label": "Seafront View",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?shore+temple+mahabalipuram+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mahabalipuram+india",
-        "connectedNodes": [
-          "shore-temple-complex"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-st-1",
-            "type": "info",
-            "azimuth": 90,
-            "elevation": 5,
-            "label": "Bay of Bengal",
-            "content": "The temple's east face catches the sunrise over the Bay of Bengal. Ancient mariners used it as a lighthouse for navigation along the Coromandel Coast."
-          },
-          {
-            "id": "hs-st-2",
-            "type": "navigation",
-            "azimuth": 270,
-            "elevation": 0,
-            "label": "Enter Temple Complex",
-            "targetNodeId": "shore-temple-complex"
-          }
-        ]
-      },
-      {
-        "id": "shore-temple-complex",
-        "label": "Temple Shrines",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?shore+temple+granite+pallava",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?shore+temple+india",
-        "connectedNodes": [
-          "shore-temple-seafront"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-stc-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 30,
-            "label": "Twin Shiva Shrines",
-            "content": "Two of the three shrines are dedicated to Shiva — one with the deity seated, one with the linga. The third enshrines Vishnu in his cosmic-sleep (anantasayana) pose."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "fatehpur-sikri-up",
-    "name": "Fatehpur Sikri",
-    "city": "Fatehpur Sikri",
-    "state": "Uttar Pradesh",
-    "region": "north",
-    "category": "heritage",
-    "lat": 27.0945,
-    "lng": 77.66,
-    "description": "Fatehpur Sikri was the Mughal imperial capital built by Emperor Akbar between 1571–1585 CE and abandoned after just 14 years due to water scarcity. Its perfectly preserved red sandstone palaces, courts, and mosques make it a UNESCO World Heritage Site of rare completeness.",
-    "established": "1571 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "February"
-    ],
-    "tags": [
-      "mughal",
-      "akbar",
-      "abandoned-city",
-      "sandstone",
-      "syncretic",
-      "palace-complex"
-    ],
-    "wikiSlug": "Fatehpur_Sikri",
-    "wikimediaCategory": "Fatehpur Sikri",
-    "features": {
-      "historical": 0.95,
-      "architectural": 0.95,
-      "religious": 0.5,
-      "natural": 0.1,
-      "cultural": 0.9,
-      "artistic": 0.9,
-      "educational": 0.95,
-      "adventurous": 0.1,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "fatehpur-buland-darwaza",
-        "label": "Buland Darwaza",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?fatehpur+sikri+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?fatehpur+sikri+india",
-        "connectedNodes": [
-          "fatehpur-diwan"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-fb-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 40,
-            "label": "Buland Darwaza",
-            "content": "At 54 metres, the Buland Darwaza (Gate of Magnificence) is the world's largest gateway. Built by Akbar to commemorate his conquest of Gujarat in 1572."
-          },
-          {
-            "id": "hs-fb-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Enter Palace Complex",
-            "targetNodeId": "fatehpur-diwan"
-          }
-        ]
-      },
-      {
-        "id": "fatehpur-diwan",
-        "label": "Diwan-i-Khas (Hall of Private Audience)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?fatehpur+sikri+palace+hall",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?fatehpur+palace+india",
-        "connectedNodes": [
-          "fatehpur-buland-darwaza"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-fd-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 10,
-            "label": "Central Pillar Throne",
-            "content": "A single elaborately carved pillar in the centre supports a circular throne platform connected to four corner galleries by bridges. Akbar reportedly sat here to hold religious debates between scholars of all faiths."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mehrangarh-fort-jodhpur",
-    "name": "Mehrangarh Fort",
-    "city": "Jodhpur",
-    "state": "Rajasthan",
-    "region": "west",
-    "category": "fort",
-    "lat": 26.2979,
-    "lng": 73.0185,
-    "description": "Mehrangarh Fort rises 122 metres above the blue city of Jodhpur on a perpendicular cliff, its massive walls studded with cannonball marks. Founded in 1459 CE by Rao Jodha, it houses a superbly curated museum of Rajput arms, paintings, and palanquins.",
-    "established": "1459 CE",
+    "id": "christ-the-redeemer-rio",
+    "name": "Christ the Redeemer",
+    "city": "Rio de Janeiro",
+    "state": "Brazil",
+    "region": "south-america",
+    "category": "spiritual",
+    "lat": -22.9519,
+    "lng": -43.2105,
+    "description": "Christ the Redeemer is a 38-metre Art Deco statue of Jesus Christ atop Mount Corcovado, completed in 1931. It overlooks Rio de Janeiro with arms outstretched 28 metres wide and is one of the seven New Wonders of the World.",
+    "established": "1931",
     "unescoStatus": false,
     "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
     ],
     "tags": [
-      "rajput",
-      "jodhpur",
-      "blue-city",
-      "cliff",
-      "museum",
-      "ramparts",
-      "rajasthan"
+      "rio",
+      "corcovado",
+      "art-deco",
+      "statue",
+      "new-wonder"
     ],
-    "wikiSlug": "Mehrangarh",
-    "wikimediaCategory": "Mehrangarh Fort",
+    "wikiSlug": "Christ_the_Redeemer_(statue)",
+    "wikimediaCategory": "Christ the Redeemer",
     "features": {
-      "historical": 0.9,
-      "architectural": 0.95,
-      "religious": 0.3,
-      "natural": 0.4,
-      "cultural": 0.9,
-      "artistic": 0.85,
-      "educational": 0.85,
-      "adventurous": 0.5,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "mehrangarh-ramparts",
-        "label": "Ramparts Overlooking Jodhpur",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?mehrangarh+fort+jodhpur+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mehrangarh+jodhpur+india",
-        "connectedNodes": [
-          "mehrangarh-palace"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-mr-1",
-            "type": "info",
-            "azimuth": 180,
-            "elevation": -10,
-            "label": "Blue City of Jodhpur",
-            "content": "The indigo-painted houses below were traditionally homes of Brahmin priests. The colour was believed to repel insects and keep homes cool in the Thar Desert heat."
-          },
-          {
-            "id": "hs-mr-2",
-            "type": "navigation",
-            "azimuth": 90,
-            "elevation": 0,
-            "label": "Enter Palace",
-            "targetNodeId": "mehrangarh-palace"
-          }
-        ]
-      },
-      {
-        "id": "mehrangarh-palace",
-        "label": "Sheesh Mahal & Palace Courtyards",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?mehrangarh+palace+interior+rajasthan",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mehrangarh+palace+india",
-        "connectedNodes": [
-          "mehrangarh-ramparts"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-mp-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 15,
-            "label": "Sheesh Mahal",
-            "content": "The Palace of Mirrors features thousands of tiny convex mirrors set in floral plasterwork. Candlelight once turned the ceiling into a glittering night sky for the maharaja's entertainment."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "amber-fort-jaipur",
-    "name": "Amber Fort",
-    "city": "Jaipur",
-    "state": "Rajasthan",
-    "region": "west",
-    "category": "fort",
-    "lat": 26.9855,
-    "lng": 75.8513,
-    "description": "Amber Fort is a majestic Rajput fort-palace complex overlooking Maota Lake near Jaipur. Built in 1592 CE by Raja Man Singh I, its blend of Hindu and Mughal architecture — the Diwan-i-Am, Sheesh Mahal, and Sukh Niwas — makes it a UNESCO World Heritage Site.",
-    "established": "1592 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "rajput",
-      "mughal",
-      "mirror-palace",
-      "jaipur",
-      "lake-view",
-      "rajasthan"
-    ],
-    "wikiSlug": "Amber_Fort",
-    "wikimediaCategory": "Amber Fort",
-    "features": {
-      "historical": 0.9,
-      "architectural": 0.95,
-      "religious": 0.3,
-      "natural": 0.4,
-      "cultural": 0.9,
-      "artistic": 0.95,
-      "educational": 0.85,
-      "adventurous": 0.3,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "amber-jaleb-chowk",
-        "label": "Jaleb Chowk (Main Courtyard)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?amber+fort+jaipur+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?amber+fort+india",
-        "connectedNodes": [
-          "amber-sheesh-mahal"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-aj-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": -15,
-            "label": "Maota Lake Reflection",
-            "content": "The main courtyard is used as a parade ground. From here, elephants once carried royalty up the steep ramp. The lake below perfectly reflects the fort at dawn."
-          },
-          {
-            "id": "hs-aj-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Enter Palace",
-            "targetNodeId": "amber-sheesh-mahal"
-          }
-        ]
-      },
-      {
-        "id": "amber-sheesh-mahal",
-        "label": "Sheesh Mahal (Mirror Palace)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?sheesh+mahal+mirror+palace+rajasthan",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?amber+fort+sheesh+mahal",
-        "connectedNodes": [
-          "amber-jaleb-chowk"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-as-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 20,
-            "label": "1 Million Mirror Fragments",
-            "content": "The ceiling and walls are encrusted with over a million convex glass fragments set in geometric and floral patterns. A single candle flame multiplied makes the chamber glow like a constellation."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mysore-palace-karnataka",
-    "name": "Mysore Palace",
-    "city": "Mysore",
-    "state": "Karnataka",
-    "region": "south",
-    "category": "fort",
-    "lat": 12.3052,
-    "lng": 76.6551,
-    "description": "Mysore Palace is the official residence of the Wadiyar dynasty and the largest palace in India by area. Its Indo-Saracenic architecture blending Hindu, Muslim, Rajput, and Gothic styles and 96,000 bulbs that light its exterior during Dasara remain India's most visited non-heritage monument.",
-    "established": "1912 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January"
-    ],
-    "tags": [
-      "wadiyar",
-      "indo-saracenic",
-      "dasara",
-      "illuminated",
-      "karnataka",
-      "royal"
-    ],
-    "wikiSlug": "Mysore_Palace",
-    "wikimediaCategory": "Mysore Palace",
-    "features": {
-      "historical": 0.8,
-      "architectural": 0.95,
-      "religious": 0.3,
-      "natural": 0.2,
-      "cultural": 0.95,
-      "artistic": 0.95,
-      "educational": 0.8,
-      "adventurous": 0.1,
-      "ancient": 0.0,
-      "medieval": 0.0,
-      "colonial": 1.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "mysore-entrance-facade",
-        "label": "Main Facade & Golden Dome",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?mysore+palace+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mysore+palace+india",
-        "connectedNodes": [
-          "mysore-kalyana-mantapa"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-me-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 30,
-            "label": "24-carat Gold Finial",
-            "content": "The central dome is topped with a 145-kg gold finial. The palace was rebuilt in 1912 after the wooden structure burned down during the Dasara celebrations of 1897."
-          },
-          {
-            "id": "hs-me-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Enter Palace",
-            "targetNodeId": "mysore-kalyana-mantapa"
-          }
-        ]
-      },
-      {
-        "id": "mysore-kalyana-mantapa",
-        "label": "Kalyana Mantapa (Wedding Hall)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?mysore+palace+interior+hall",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mysore+interior+india",
-        "connectedNodes": [
-          "mysore-entrance-facade"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-mk-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 20,
-            "label": "Cast-Iron Pillars & Tiffany Ceiling",
-            "content": "The octagonal Kalyana Mantapa has a stained-glass ceiling supported by cast-iron pillars. The floor tiles were imported from Scotland and Glasgow, while the paintings narrate the Dasara procession."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "city-palace-udaipur",
-    "name": "City Palace, Udaipur",
-    "city": "Udaipur",
-    "state": "Rajasthan",
-    "region": "west",
-    "category": "fort",
-    "lat": 24.5764,
-    "lng": 73.6832,
-    "description": "The City Palace of Udaipur is a magnificent lakeside palace complex begun by Maharana Udai Singh II in 1559 CE. Sprawling across a ridge above Lake Pichola, it is the largest palace complex in Rajasthan, with 11 interconnected palaces built by successive maharanas over 400 years.",
-    "established": "1559 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "mewar",
-      "lake-city",
-      "rajasthan",
-      "white-marble",
-      "lake-pichola",
-      "rajput"
-    ],
-    "wikiSlug": "City_Palace,_Udaipur",
-    "wikimediaCategory": "City Palace, Udaipur",
-    "features": {
-      "historical": 0.9,
-      "architectural": 0.95,
-      "religious": 0.3,
-      "natural": 0.5,
-      "cultural": 0.9,
-      "artistic": 0.95,
-      "educational": 0.85,
-      "adventurous": 0.2,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "city-palace-lake-view",
-        "label": "Lake Pichola Terrace View",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?udaipur+city+palace+lake+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?udaipur+india",
-        "connectedNodes": [
-          "city-palace-mor-chowk"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-cpl-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": -10,
-            "label": "Lake Pichola & Jag Mandir",
-            "content": "The artificial Lake Pichola was created in 1362 CE. The Jag Mandir island palace in its centre sheltered the young Mughal prince Shah Jahan when he rebelled against his father Jahangir."
-          },
-          {
-            "id": "hs-cpl-2",
-            "type": "navigation",
-            "azimuth": 90,
-            "elevation": 0,
-            "label": "Mor Chowk",
-            "targetNodeId": "city-palace-mor-chowk"
-          }
-        ]
-      },
-      {
-        "id": "city-palace-mor-chowk",
-        "label": "Mor Chowk (Peacock Courtyard)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?udaipur+palace+interior+mosaic",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?udaipur+palace+india",
-        "connectedNodes": [
-          "city-palace-lake-view"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-mc-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 15,
-            "label": "Three Seasons Mosaic",
-            "content": "Three massive glass and tile mosaics (5 metres each) depict peacocks representing the three seasons of Rajasthan — Summer, Monsoon, and Winter. Each mosaic uses 5,000 pieces of coloured glass."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "jaisalmer-fort-rajasthan",
-    "name": "Jaisalmer Fort",
-    "city": "Jaisalmer",
-    "state": "Rajasthan",
-    "region": "west",
-    "category": "fort",
-    "lat": 26.9157,
-    "lng": 70.9083,
-    "description": "Jaisalmer Fort is a living fort — one of the world's largest — rising from the sands of the Thar Desert. Built in 1156 CE by Rawal Jaisal, its golden sandstone walls glow at sunset and house temples, havelis, and a still-functioning community inside its ancient walls.",
-    "established": "1156 CE",
-    "unescoStatus": true,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "living-fort",
-      "golden-city",
-      "thar-desert",
-      "sandstone",
-      "havelis",
-      "rajasthan"
-    ],
-    "wikiSlug": "Jaisalmer_Fort",
-    "wikimediaCategory": "Jaisalmer Fort",
-    "features": {
-      "historical": 0.9,
-      "architectural": 0.9,
-      "religious": 0.4,
-      "natural": 0.5,
-      "cultural": 0.9,
-      "artistic": 0.85,
-      "educational": 0.85,
-      "adventurous": 0.6,
-      "ancient": 0.0,
-      "medieval": 1.0,
-      "colonial": 0.0,
-      "modern": 0.0
-    },
-    "nodes": [
-      {
-        "id": "jaisalmer-rampart",
-        "label": "Fort Ramparts — Desert View",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?jaisalmer+fort+desert+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?jaisalmer+india",
-        "connectedNodes": [
-          "jaisalmer-palace"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-jr-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": -5,
-            "label": "Thar Desert Panorama",
-            "content": "The golden sands of the Thar extend 200,000 sq km — the world's most densely populated desert. The fort's 99 bastions blend into the sand at sunrise, giving Jaisalmer its nickname Sonar Qila (Golden Fort)."
-          },
-          {
-            "id": "hs-jr-2",
-            "type": "navigation",
-            "azimuth": 90,
-            "elevation": 0,
-            "label": "Royal Palace",
-            "targetNodeId": "jaisalmer-palace"
-          }
-        ]
-      },
-      {
-        "id": "jaisalmer-palace",
-        "label": "Royal Palace (Raj Mahal)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?jaisalmer+palace+interior+rajasthan",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?jaisalmer+fort+india",
-        "connectedNodes": [
-          "jaisalmer-rampart"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-jp-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 10,
-            "label": "Jain Temples Inside Fort",
-            "content": "Seven Jain temples built between 12th–15th centuries stand within the fort walls. Their interiors of carved yellow sandstone and silver icons rival the finest temples of Rajasthan."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "gateway-of-india-mumbai",
-    "name": "Gateway of India",
-    "city": "Mumbai",
-    "state": "Maharashtra",
-    "region": "west",
-    "category": "museum",
-    "lat": 18.922,
-    "lng": 72.8347,
-    "description": "The Gateway of India is a triumphal arch built on the waterfront of Apollo Bunder in 1924 to commemorate the visit of King George V and Queen Mary in 1911. In 1948, the last British troops to leave India marched through this arch — marking the symbolic end of the British Empire in the subcontinent.",
-    "established": "1924 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "colonial",
-      "triumphal-arch",
-      "waterfront",
-      "mumbai",
-      "independence",
-      "basalt"
-    ],
-    "wikiSlug": "Gateway_of_India",
-    "wikimediaCategory": "Gateway of India",
-    "features": {
-      "historical": 0.9,
+      "historical": 0,
       "architectural": 0.85,
-      "religious": 0.0,
-      "natural": 0.4,
-      "cultural": 0.9,
-      "artistic": 0.7,
-      "educational": 0.8,
-      "adventurous": 0.2,
-      "ancient": 0.0,
-      "medieval": 0.0,
-      "colonial": 1.0,
-      "modern": 0.1
-    },
-    "nodes": [
-      {
-        "id": "gateway-arch",
-        "label": "Gateway Arch — Apollo Bunder",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?gateway+india+mumbai+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?gateway+india+india",
-        "connectedNodes": [
-          "gateway-harbour"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-ga-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 25,
-            "label": "26-metre Basalt Arch",
-            "content": "Architect George Wittet's 1924 design blends Indo-Saracenic elements with a 26-metre basalt arch. The four turrets were inspired by 16th-century Gujarati architecture. The yellow basalt was imported from Gwalior."
-          },
-          {
-            "id": "hs-ga-2",
-            "type": "navigation",
-            "azimuth": 180,
-            "elevation": 0,
-            "label": "Harbour View",
-            "targetNodeId": "gateway-harbour"
-          }
-        ]
-      },
-      {
-        "id": "gateway-harbour",
-        "label": "Mumbai Harbour View",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?mumbai+harbour+gateway+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?mumbai+waterfront+india",
-        "connectedNodes": [
-          "gateway-arch"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-gh-1",
-            "type": "info",
-            "azimuth": 90,
-            "elevation": -5,
-            "label": "Elephanta Island Ferry",
-            "content": "Ferries departing from the jetty beside the Gateway reach Elephanta Island in 1 hour — home to 6th-century rock-cut Shiva temples and UNESCO World Heritage status."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "india-gate-delhi",
-    "name": "India Gate",
-    "city": "New Delhi",
-    "state": "Delhi",
-    "region": "north",
-    "category": "museum",
-    "lat": 28.6129,
-    "lng": 77.2295,
-    "description": "India Gate is a 42-metre war memorial designed by Edwin Lutyens to honour the 84,000 Indian soldiers of the British Indian Army who died in World War I and the Third Anglo-Afghan War. The Amar Jawan Jyoti (eternal flame for the unknown soldier) has burned here since 1971, now relocated to the National War Memorial.",
-    "established": "1931 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "war-memorial",
-      "lutyens",
-      "colonial",
-      "independence",
-      "rajpath",
-      "delhi"
-    ],
-    "wikiSlug": "India_Gate",
-    "wikimediaCategory": "India Gate",
-    "features": {
-      "historical": 0.9,
-      "architectural": 0.8,
-      "religious": 0.0,
-      "natural": 0.3,
-      "cultural": 0.9,
-      "artistic": 0.7,
-      "educational": 0.85,
-      "adventurous": 0.1,
-      "ancient": 0.0,
-      "medieval": 0.0,
-      "colonial": 1.0,
-      "modern": 0.2
-    },
-    "nodes": [
-      {
-        "id": "india-gate-arch",
-        "label": "Arch & Rajpath Axis",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?india+gate+delhi+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?india+gate+india",
-        "connectedNodes": [
-          "india-gate-canopy"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-iga-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 0,
-            "label": "Rajpath to Rashtrapati Bhavan",
-            "content": "The 3-km Kartavya Path (formerly Rajpath) aligns from India Gate directly to Rashtrapati Bhavan on Raisina Hill — Lutyens' grand axial design for Imperial New Delhi. The alignment mirrors the Paris axis from Arc de Triomphe to the Louvre."
-          },
-          {
-            "id": "hs-iga-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "George V Canopy",
-            "targetNodeId": "india-gate-canopy"
-          }
-        ]
-      },
-      {
-        "id": "india-gate-canopy",
-        "label": "Empty Canopy (Statue Removed 1968)",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?india+gate+canopy+delhi",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?india+gate+memorial+india",
-        "connectedNodes": [
-          "india-gate-arch"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-igc-1",
-            "type": "info",
-            "azimuth": 180,
-            "elevation": 15,
-            "label": "Names of 13,300 Soldiers",
-            "content": "The names of 13,300 British Indian Army soldiers who died on the North-West Frontier (1919) and in Afghanistan are inscribed on the arch's surfaces. Over 70,000 World War I names were added later."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "victoria-memorial-kolkata",
-    "name": "Victoria Memorial",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "region": "east",
-    "category": "museum",
-    "lat": 22.5448,
-    "lng": 88.3426,
-    "description": "The Victoria Memorial is a grand white Makrana marble monument built between 1906–1921 to commemorate Queen Victoria's 25-year rule over India. Designed by William Emerson in an Indo-Saracenic style, it now houses a museum of colonial-era artifacts, Raj-period art, and manuscripts.",
-    "established": "1921 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "colonial",
-      "makrana-marble",
-      "british-raj",
-      "kolkata",
-      "indo-saracenic",
-      "queen-victoria"
-    ],
-    "wikiSlug": "Victoria_Memorial",
-    "wikimediaCategory": "Victoria Memorial",
-    "features": {
-      "historical": 0.9,
-      "architectural": 0.9,
-      "religious": 0.0,
-      "natural": 0.4,
-      "cultural": 0.85,
+      "religious": 1.0,
+      "natural": 0,
+      "cultural": 1.0,
       "artistic": 0.85,
-      "educational": 0.85,
-      "adventurous": 0.1,
-      "ancient": 0.0,
-      "medieval": 0.0,
-      "colonial": 1.0,
-      "modern": 0.1
-    },
-    "nodes": [
-      {
-        "id": "victoria-memorial-facade",
-        "label": "South Facade & Reflecting Pool",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?victoria+memorial+kolkata+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?victoria+memorial+india",
-        "connectedNodes": [
-          "victoria-memorial-gallery"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-vmf-1",
-            "type": "info",
-            "azimuth": 0,
-            "elevation": 25,
-            "label": "Makrana Marble Dome",
-            "content": "The same Makrana marble used for the Taj Mahal clads this 184-metre long structure. The bronze Angel of Victory on the dome rotates with the wind — a curious technical flourish by architect Emerson."
-          },
-          {
-            "id": "hs-vmf-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Royal Gallery",
-            "targetNodeId": "victoria-memorial-gallery"
-          }
-        ]
-      },
-      {
-        "id": "victoria-memorial-gallery",
-        "label": "Royal Gallery — Queen's Collection",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?victoria+memorial+gallery+interior",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?victoria+memorial+kolkata",
-        "connectedNodes": [
-          "victoria-memorial-facade"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-vmg-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 10,
-            "label": "Thomas Daniell Paintings",
-            "content": "The gallery houses original oil paintings by Thomas and William Daniell who toured India between 1786–1793 producing the definitive visual record of pre-colonial India. Their 'Oriental Scenery' engravings sparked British fascination with Indian landscapes."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "howrah-bridge-kolkata",
-    "name": "Howrah Bridge",
-    "city": "Kolkata",
-    "state": "West Bengal",
-    "region": "east",
-    "category": "museum",
-    "lat": 22.585,
-    "lng": 88.3468,
-    "description": "Howrah Bridge (Rabindra Setu) is a cantilever bridge over the Hooghly River, the third longest cantilever bridge in the world when built in 1943. It carries over 100,000 vehicles and innumerable pedestrians daily — making it one of the world's busiest bridges — without a single nut or bolt in its entire steel structure.",
-    "established": "1943 CE",
-    "unescoStatus": false,
-    "bestSeason": [
-      "October",
-      "November",
-      "December",
-      "January",
-      "February"
-    ],
-    "tags": [
-      "cantilever-bridge",
-      "hooghly",
-      "steel",
-      "colonial",
-      "kolkata",
-      "rabindra-setu"
-    ],
-    "wikiSlug": "Howrah_Bridge",
-    "wikimediaCategory": "Howrah Bridge",
-    "features": {
-      "historical": 0.8,
-      "architectural": 0.85,
-      "religious": 0.0,
-      "natural": 0.3,
-      "cultural": 0.8,
-      "artistic": 0.5,
       "educational": 0.8,
-      "adventurous": 0.3,
-      "ancient": 0.0,
-      "medieval": 0.0,
-      "colonial": 1.0,
-      "modern": 0.3
+      "adventurous": 0,
+      "ancient": 0,
+      "medieval": 0,
+      "colonial": 0,
+      "modern": 0.85
     },
     "nodes": [
       {
-        "id": "howrah-kolkata-bank",
-        "label": "Kolkata Bank Riverfront",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?howrah+bridge+kolkata+india",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?howrah+bridge+india",
-        "connectedNodes": [
-          "howrah-midspan"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-hkb-1",
-            "type": "info",
-            "azimuth": 270,
-            "elevation": 10,
-            "label": "26,500-tonne Riveted Steel",
-            "content": "The bridge uses 26,500 tonnes of high-tensile steel, entirely held together by 2.3 million rivets. No welding, no bolts. The trusses were fabricated in Calcutta and erected without scaffolding using a cantilever technique."
-          },
-          {
-            "id": "hs-hkb-2",
-            "type": "navigation",
-            "azimuth": 0,
-            "elevation": 0,
-            "label": "Walk to Mid-Span",
-            "targetNodeId": "howrah-midspan"
-          }
-        ]
-      },
-      {
-        "id": "howrah-midspan",
-        "label": "Mid-Span — Hooghly River View",
-        "panoramaUrl": "https://source.unsplash.com/3840x1920/?hooghly+river+bridge+kolkata",
-        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?hooghly+river+india",
-        "connectedNodes": [
-          "howrah-kolkata-bank"
-        ],
-        "hotspots": [
-          {
-            "id": "hs-hm-1",
-            "type": "info",
-            "azimuth": 90,
-            "elevation": -10,
-            "label": "Flower Sellers & Devotees",
-            "content": "The Mullik Ghat flower market beneath the Kolkata end of the bridge has operated continuously since colonial times. Tonnes of marigolds, roses, and tuberoses are traded here daily for temples, weddings, and festivals."
-          }
-        ]
+        "id": "cr-base",
+        "label": "Statue Plaza",
+        "panoramaUrl": "https://source.unsplash.com/3840x1920/?christ+the+redeemer+rio",
+        "fallbackImageUrl": "https://source.unsplash.com/1920x960/?rio+de+janeiro",
+        "connectedNodes": [],
+        "hotspots": []
       }
     ]
   }

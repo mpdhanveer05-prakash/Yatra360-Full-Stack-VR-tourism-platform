@@ -33,8 +33,13 @@ export interface TourNode {
   wikiContext?: string;
 }
 
-export type LocationRegion = 'north' | 'south' | 'east' | 'west' | 'northeast' | 'central';
-export type LocationCategory = 'heritage' | 'temple' | 'fort' | 'museum' | 'nature' | 'spiritual' | 'hill-station';
+export type LocationRegion =
+  | 'north' | 'south' | 'east' | 'west' | 'northeast' | 'central'   // India sub-regions (legacy)
+  | 'europe' | 'asia' | 'africa' | 'oceania'
+  | 'north-america' | 'south-america';
+export type LocationCategory =
+  | 'heritage' | 'temple' | 'fort' | 'museum' | 'nature' | 'spiritual' | 'hill-station'
+  | 'modern';
 
 export interface IndiaLocation {
   id: string;

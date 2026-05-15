@@ -24,16 +24,16 @@ describe('voice nav intent', () => {
     expect(result!.location.id).toBe('taj-mahal-agra')
   })
 
-  it('matches "go to Hampi"', () => {
-    const result = detectNavIntent('go to Hampi', locations)
+  it('matches "go to the Eiffel Tower"', () => {
+    const result = detectNavIntent('go to the Eiffel Tower', locations)
     expect(result).not.toBeNull()
-    expect(result!.location.id).toBe('hampi-karnataka')
+    expect(result!.location.id).toBe('eiffel-tower-paris')
   })
 
-  it('matches bare location name "Red Fort"', () => {
-    const result = detectNavIntent('Red Fort', locations)
+  it('matches bare location name "Colosseum"', () => {
+    const result = detectNavIntent('Colosseum', locations)
     expect(result).not.toBeNull()
-    expect(result!.location.id).toBe('red-fort-delhi')
+    expect(result!.location.id).toBe('colosseum-rome')
   })
 
   it('returns null for a guide question', () => {

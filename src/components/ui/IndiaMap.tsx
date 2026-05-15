@@ -6,17 +6,25 @@ interface Props {
   locations: IndiaLocation[]
 }
 
-// Approx India bounding box (with a little padding).
-const LAT_MIN = 6,   LAT_MAX = 36
-const LNG_MIN = 68,  LNG_MAX = 98
+// World bounding box covering all six populated continents.
+const LAT_MIN = -55,  LAT_MAX = 75
+const LNG_MIN = -170, LNG_MAX = 180
 
 const REGION_COLOR: Record<string, string> = {
-  north:     '#FF6B1A',
-  south:     '#D4A017',
-  east:      '#C4622D',
-  west:      '#F0C040',
-  northeast: '#8FD4A7',
-  central:   '#A89070',
+  // India sub-regions (legacy)
+  north:           '#FF6B1A',
+  south:           '#D4A017',
+  east:            '#C4622D',
+  west:            '#F0C040',
+  northeast:       '#8FD4A7',
+  central:         '#A89070',
+  // Continents
+  'europe':        '#4F9CFF',
+  'asia':          '#FF6B1A',
+  'africa':        '#F0C040',
+  'oceania':       '#8FD4A7',
+  'north-america': '#C4622D',
+  'south-america': '#D4A017',
 }
 
 /**
@@ -27,7 +35,7 @@ export default function IndiaMap({ locations }: Props) {
   const navigate = useNavigate()
   const [hoverId, setHoverId] = useState<string | null>(null)
 
-  const W = 600, H = 700
+  const W = 1000, H = 500   // world map aspect ~2:1
   const project = useMemo(() => (lat: number, lng: number) => {
     const x = ((lng - LNG_MIN) / (LNG_MAX - LNG_MIN)) * W
     const y = ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * H
@@ -37,7 +45,7 @@ export default function IndiaMap({ locations }: Props) {
   return (
     <div className="card p-3 overflow-hidden">
       <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
-        <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 w-full h-full" aria-label="Map of destinations across India">
+        <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 w-full h-full" aria-label="World map of destinations">
           {/* Background */}
           <rect x={0} y={0} width={W} height={H} fill="rgba(13,15,26,0.6)" />
 

@@ -20,6 +20,7 @@ export const CATEGORY_TRACKS: Record<LocationCategory, AmbientTrack> = {
   nature:        { src: '/audio/ambient-nature.mp3',   label: 'Forest birds' },
   spiritual:     { src: '/audio/ambient-spiritual.mp3',label: 'Meditative drone' },
   'hill-station':{ src: '/audio/ambient-hills.mp3',    label: 'Mountain breeze' },
+  modern:        { src: '/audio/ambient-city.mp3',     label: 'City ambience' },
 }
 
 const FADE_MS = 1200

@@ -122,7 +122,7 @@ export default function ExplorePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-4">
           <div className="flex items-end justify-between">
             <div>
-              <p className="font-mono text-xs tracking-[0.3em] text-saffron uppercase mb-1">25 Destinations</p>
+              <p className="font-mono text-xs tracking-[0.3em] text-saffron uppercase mb-1">15 Destinations</p>
               <h1 className="font-cinzel text-2xl text-cream">Explore India</h1>
             </div>
             {/* view toggle */}

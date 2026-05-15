@@ -274,7 +274,7 @@ export default function DashboardPage() {
         {hasData && (
           <div className="text-center pt-4 border-t border-[var(--border)]">
             <button onClick={() => navigate('/explore')} className="btn-secondary text-xs">
-              Browse All 25 Destinations →
+              Browse All 15 Destinations →
             </button>
           </div>
         )}

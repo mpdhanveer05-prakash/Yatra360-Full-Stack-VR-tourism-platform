@@ -22,36 +22,26 @@ SRC  = ROOT / "src" / "data" / "indiaLocations.json"
 BAK  = ROOT / "src" / "data" / "indiaLocations.full.json"
 AI   = ROOT / "ai_engine" / "data" / "indiaLocations.json"
 
-# IDs we keep — confirmed walkable Google Street View coverage at the site itself.
+# IDs we keep — strict shortlist of sites with HIGH-CONFIDENCE walkable
+# Google Street View coverage at the actual site (not just nearby roads).
+# Verified or extremely well-mapped urban landmarks only.
 KEEP_IDS = {
-    # Heritage / UNESCO
+    # Heritage / UNESCO — large open complexes with confirmed SV inside
     "taj-mahal-agra",
     "qutb-minar-delhi",
     "red-fort-delhi",
-    "hampi-karnataka",
-    "ellora-caves-maharashtra",
-    "khajuraho-temples-mp",
-    "konark-sun-temple-odisha",
-    "mahabalipuram-shore-temple",
     "fatehpur-sikri-up",
+    "hampi-karnataka",
+    "mahabalipuram-shore-temple",
 
-    # Forts & Palaces
+    # Forts & Palaces — major tourist forts with full SV mapping
     "mehrangarh-fort-jodhpur",
     "amber-fort-jaipur",
-    "chittorgarh-fort-rajasthan",
     "mysore-palace-karnataka",
     "city-palace-udaipur",
     "jaisalmer-fort-rajasthan",
-    "gwalior-fort-mp",
-    "aga-khan-palace-pune",
 
-    # Temples / Spiritual (where SV exists around the complex)
-    "golden-temple-amritsar",
-    "meenakshi-temple-madurai",
-    "brihadeeswarar-temple-thanjavur",
-    "somnath-temple-gujarat",
-
-    # Modern Landmarks
+    # Modern Urban Landmarks — definitely fully mapped
     "gateway-of-india-mumbai",
     "india-gate-delhi",
     "victoria-memorial-kolkata",
@@ -61,8 +51,18 @@ KEEP_IDS = {
 # Categories of removals — for documentation / future review
 REMOVE_REASONS = {
     "ajanta-caves-maharashtra":        "limited SV — only entrance road",
+    "ellora-caves-maharashtra":        "only entrance/road, not inside caves",
+    "khajuraho-temples-mp":            "user-photo only, no walkable SV",
+    "konark-sun-temple-odisha":        "limited SV, user photos common",
     "golconda-fort-hyderabad":         "fragmented SV inside",
     "bidar-fort-karnataka":            "very limited SV",
+    "chittorgarh-fort-rajasthan":      "fort road only, interior fragmented",
+    "gwalior-fort-mp":                 "limited interior SV",
+    "aga-khan-palace-pune":            "exterior road only",
+    "golden-temple-amritsar":          "user photos only inside parikrama",
+    "meenakshi-temple-madurai":        "exterior road only — no SV inside",
+    "brihadeeswarar-temple-thanjavur": "exterior road only — no SV inside",
+    "somnath-temple-gujarat":          "exterior road only — no SV inside",
     "kedarnath-temple-uttarakhand":    "remote Himalayan trek — no SV",
     "vaishno-devi-jammu":              "Himalayan pilgrimage trail — no SV",
     "lingaraj-temple-bhubaneswar":     "restricted access — no SV inside",
@@ -89,8 +89,11 @@ REMOVE_REASONS = {
 
 
 def main() -> None:
-    locations = json.loads(SRC.read_text(encoding="utf-8"))
-    print(f"Loaded {len(locations)} locations from {SRC.name}")
+    # Always read from the full backup if it exists, so re-running the script
+    # with a smaller KEEP_IDS set works correctly.
+    source = BAK if BAK.exists() else SRC
+    locations = json.loads(source.read_text(encoding="utf-8"))
+    print(f"Loaded {len(locations)} locations from {source.name}")
 
     kept   = [loc for loc in locations if loc["id"] in KEEP_IDS]
     removed = [loc for loc in locations if loc["id"] not in KEEP_IDS]

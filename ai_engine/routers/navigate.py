@@ -5,7 +5,7 @@ from typing import Any
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from ai_engine.models.rl_navigator import suggest_next, update, get_q_table_snapshot
+from models.rl_navigator import suggest_next, update, get_q_table_snapshot
 
 router = APIRouter()
 

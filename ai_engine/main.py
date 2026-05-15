@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from ai_engine.routers import recommend, navigate, guide
+from routers import recommend, navigate, guide
 
 app = FastAPI(
     title="Yatra360 AI Engine",

@@ -5,7 +5,7 @@ from typing import Any
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
 
-from ai_engine.models.rag_guide import answer_question
+from models.rag_guide import answer_question
 
 router = APIRouter()
 

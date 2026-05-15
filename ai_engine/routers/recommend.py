@@ -5,7 +5,7 @@ from typing import Any
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from ai_engine.models.hybrid_recommender import get_recommendations, get_cold_start
+from models.hybrid_recommender import get_recommendations, get_cold_start
 
 router = APIRouter()
 

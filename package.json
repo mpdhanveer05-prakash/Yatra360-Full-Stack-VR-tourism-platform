@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:backend": "tsx watch backend/server.ts",
-    "dev:ai": "uvicorn ai_engine.main:app --reload --port 8000",
+    "dev:ai": "uvicorn main:app --app-dir ai_engine --reload --port 8000",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:backend\" \"npm run dev:ai\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

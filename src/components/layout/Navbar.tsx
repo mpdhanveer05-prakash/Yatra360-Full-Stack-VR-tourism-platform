@@ -59,7 +59,7 @@ export default function Navbar() {
                 className="font-mono text-[11px] text-text-secondary"
                 title={user.email}
               >
-                Hi, <span className="text-gold">{user.displayName || user.username}</span>
+                Hi, <span className="text-gold">{user.username}</span>
               </span>
               <button
                 onClick={handleLogout}
@@ -122,7 +122,7 @@ export default function Navbar() {
             {user ? (
               <>
                 <p className="font-mono text-[11px] text-text-secondary">
-                  Signed in as <span className="text-gold">{user.displayName || user.username}</span>
+                  Signed in as <span className="text-gold">{user.username}</span>
                 </p>
                 <button
                   onClick={handleLogout}

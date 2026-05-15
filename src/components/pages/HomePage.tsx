@@ -263,12 +263,6 @@ export default function HomePage() {
         </button>
       </section>
 
-      {/* ── Footer ornament ── */}
-      <div className="border-t border-[var(--border)] py-6 text-center">
-        <p className="font-mono text-[10px] tracking-widest text-text-muted uppercase">
-          Yatra360 · Open Source · Powered by Wikipedia & Wikimedia Commons
-        </p>
-      </div>
     </div>
   )
 }

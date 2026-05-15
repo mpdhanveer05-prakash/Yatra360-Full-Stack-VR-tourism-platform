@@ -24,8 +24,8 @@ async function postJson<T>(path: string, body: unknown): Promise<T> {
   return data as T
 }
 
-export function signup(username: string, email: string, password: string, displayName?: string): Promise<AuthResponse> {
-  return postJson<AuthResponse>('/api/auth/signup', { username, email, password, displayName })
+export function signup(username: string, email: string, password: string): Promise<AuthResponse> {
+  return postJson<AuthResponse>('/api/auth/signup', { username, email, password })
 }
 
 export function login(username: string, password: string): Promise<AuthResponse> {

@@ -162,11 +162,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="text-center border-t border-[var(--border)] pt-6">
-          <p className="font-mono text-[10px] tracking-widest text-text-muted uppercase">
-            Yatra360 · Open Source · Powered by Wikipedia &amp; Wikimedia Commons
-          </p>
-        </div>
       </div>
     </div>
   )

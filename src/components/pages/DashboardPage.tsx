@@ -87,16 +87,13 @@ function UserHeader() {
         <p className="font-mono text-xs tracking-[0.3em] text-saffron uppercase mb-1">Personal Analytics</p>
         <h1 className="font-cinzel text-2xl text-cream">
           {user ? (
-            <>Welcome back, <span className="text-gold">{user.displayName || user.username}</span></>
+            <>Welcome back, <span className="text-gold">{user.username}</span></>
           ) : (
             <>Your Journey</>
           )}
         </h1>
-        {user && (
-          <p className="font-mono text-[11px] text-text-muted mt-1">
-            <span className="text-text-secondary">@{user.username}</span>
-            {user.email ? ` · ${user.email}` : ''}
-          </p>
+        {user?.email && (
+          <p className="font-mono text-[11px] text-text-muted mt-1">{user.email}</p>
         )}
       </div>
     </div>

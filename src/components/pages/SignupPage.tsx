@@ -7,24 +7,18 @@ export default function SignupPage() {
   const navigate = useNavigate()
   const setSession = useAuthStore(s => s.setSession)
 
-  const [username,    setUsername]    = useState('')
-  const [email,       setEmail]       = useState('')
-  const [password,    setPassword]    = useState('')
-  const [displayName, setDisplayName] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error,   setError]   = useState<string | null>(null)
+  const [username, setUsername] = useState('')
+  const [email,    setEmail]    = useState('')
+  const [password, setPassword] = useState('')
+  const [loading,  setLoading]  = useState(false)
+  const [error,    setError]    = useState<string | null>(null)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
     setLoading(true)
     try {
-      const { token, user } = await signup(
-        username.trim(),
-        email.trim(),
-        password,
-        displayName.trim() || undefined,
-      )
+      const { token, user } = await signup(username.trim(), email.trim(), password)
       setSession(token, user)
       navigate('/explore', { replace: true })
     } catch (err) {
@@ -79,22 +73,6 @@ export default function SignupPage() {
               onChange={e => setEmail(e.target.value)}
               className="w-full bg-bg-elevated border border-gold/20 text-cream font-proza px-3 py-2 rounded-sm focus:outline-none focus:border-gold/60 transition-colors"
               placeholder="lahari@example.com"
-            />
-          </div>
-
-          <div className="space-y-1.5">
-            <label htmlFor="displayName" className="block font-mono text-[10px] tracking-widest text-text-muted uppercase">
-              Display Name <span className="text-text-muted/60 normal-case">(optional)</span>
-            </label>
-            <input
-              id="displayName"
-              type="text"
-              autoComplete="name"
-              maxLength={60}
-              value={displayName}
-              onChange={e => setDisplayName(e.target.value)}
-              className="w-full bg-bg-elevated border border-gold/20 text-cream font-proza px-3 py-2 rounded-sm focus:outline-none focus:border-gold/60 transition-colors"
-              placeholder="A. Lahari"
             />
           </div>
 

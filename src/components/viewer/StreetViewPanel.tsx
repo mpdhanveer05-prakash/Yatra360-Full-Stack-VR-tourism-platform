@@ -26,7 +26,7 @@ export default function StreetViewPanel({ lat, lng, name }: Props) {
     // Open the LOCATION on Google Maps (regular map mode, centered + zoomed).
     // Uses the place-search API form so the location name resolves properly.
     const openInMapsUrl =
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ', India')}`
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`
 
     // Separately, the user can request Street View directly at the coordinates
     const openInStreetViewUrl =
@@ -52,6 +52,21 @@ export default function StreetViewPanel({ lat, lng, name }: Props) {
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
         loading="eager"
+      />
+
+      {/* Cover Google's bottom-corner chrome (keyboard shortcuts, terms,
+          map-data, "Report a problem", Google logo). We can't remove them
+          from inside the cross-origin iframe so we mask them with opaque
+          rectangles in our app's saffron theme. */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 z-[5] bg-bg-base pointer-events-none"
+        style={{ width: '230px', height: '34px' }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 right-0 z-[5] bg-bg-base pointer-events-none"
+        style={{ width: '180px', height: '34px' }}
       />
 
       {/* Help banner — appears only when no key is set */}

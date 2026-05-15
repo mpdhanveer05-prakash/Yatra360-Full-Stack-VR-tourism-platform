@@ -150,15 +150,34 @@ export function useVoiceAgent({
         setAnswer(confirmText)
         setState('speaking')
 
-        tts.speak(confirmText, { lang: lang ?? 'en-IN', rate: 0.95 })
+        // Wait for TTS to fully finish speaking, then navigate.
+        // Uses the engine's subscribe API to detect the speaking→idle transition.
+        // Hard 8s cap so a stuck TTS engine never strands the user.
+        let hasStartedSpeaking = false
+        let done               = false
+        let timeoutId:  ReturnType<typeof setTimeout> | null = null
+        let unsubscribe: () => void = () => {}
 
-        // Navigate after TTS finishes (or after 2.5s max so it doesn't stall)
-        navTimerRef.current = setTimeout(() => {
-          if (!abortedRef.current) {
-            tts.cancel()
-            onNavigate(navIntent.location.id, navIntent.location.name)
-          }
-        }, 2500)
+        const finish = () => {
+          if (done) return
+          done = true
+          unsubscribe()
+          if (timeoutId) clearTimeout(timeoutId)
+          tts.cancel()
+          if (abortedRef.current) return
+          setAnswer('')
+          setTranscript('')
+          setState('idle')
+          onNavigate(navIntent.location.id, navIntent.location.name)
+        }
+
+        unsubscribe = tts.subscribe((status) => {
+          if (status === 'speaking') hasStartedSpeaking = true
+          else if (status === 'idle' && hasStartedSpeaking) finish()
+        })
+        timeoutId = setTimeout(finish, 8000)
+
+        tts.speak(confirmText, { lang: lang ?? 'en-IN', rate: 0.95 })
         return
       }
 

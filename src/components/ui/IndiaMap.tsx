@@ -45,20 +45,28 @@ export default function IndiaMap({ locations }: Props) {
   return (
     <div className="card p-3 overflow-hidden">
       <div className="relative w-full" style={{ aspectRatio: `${W} / ${H}` }}>
+        {/* World map background (equirectangular, lat/lng to x/y is linear) */}
+        <img
+          src="/world-map.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 select-none pointer-events-none"
+          draggable={false}
+        />
         <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 w-full h-full" aria-label="World map of destinations">
-          {/* Background */}
-          <rect x={0} y={0} width={W} height={H} fill="rgba(13,15,26,0.6)" />
+          {/* Dark tint overlay so pins pop */}
+          <rect x={0} y={0} width={W} height={H} fill="rgba(13,15,26,0.35)" />
 
-          {/* Grid lines (every 5°) */}
-          {Array.from({ length: Math.floor((LAT_MAX - LAT_MIN) / 5) + 1 }, (_, i) => {
-            const lat = LAT_MIN + i * 5
+          {/* Grid lines (every 30° — light reference only) */}
+          {Array.from({ length: Math.floor((LAT_MAX - LAT_MIN) / 30) + 1 }, (_, i) => {
+            const lat = LAT_MIN + i * 30
             const y = ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * H
-            return <line key={`la${i}`} x1={0} x2={W} y1={y} y2={y} stroke="rgba(212,160,23,0.08)" strokeWidth={1} />
+            return <line key={`la${i}`} x1={0} x2={W} y1={y} y2={y} stroke="rgba(212,160,23,0.10)" strokeWidth={0.6} />
           })}
-          {Array.from({ length: Math.floor((LNG_MAX - LNG_MIN) / 5) + 1 }, (_, i) => {
-            const lng = LNG_MIN + i * 5
+          {Array.from({ length: Math.floor((LNG_MAX - LNG_MIN) / 30) + 1 }, (_, i) => {
+            const lng = LNG_MIN + i * 30
             const x = ((lng - LNG_MIN) / (LNG_MAX - LNG_MIN)) * W
-            return <line key={`ln${i}`} x1={x} x2={x} y1={0} y2={H} stroke="rgba(212,160,23,0.08)" strokeWidth={1} />
+            return <line key={`ln${i}`} x1={x} x2={x} y1={0} y2={H} stroke="rgba(212,160,23,0.10)" strokeWidth={0.6} />
           })}
 
           {/* Pins */}
@@ -66,7 +74,7 @@ export default function IndiaMap({ locations }: Props) {
             const { x, y } = project(loc.lat, loc.lng)
             const color = REGION_COLOR[loc.region] ?? '#D4A017'
             const isHover = hoverId === loc.id
-            const r = isHover ? 7 : 4.5
+            const r = isHover ? 9 : 7
             return (
               <g
                 key={loc.id}
@@ -84,12 +92,15 @@ export default function IndiaMap({ locations }: Props) {
                   }
                 }}
               >
-                <circle cx={x} cy={y} r={r + 4} fill={color} opacity={isHover ? 0.25 : 0.12} />
-                <circle cx={x} cy={y} r={r} fill={color} stroke="#F5EDD8" strokeWidth={1.2} />
+                {/* outer glow halo */}
+                <circle cx={x} cy={y} r={r + 8} fill={color} opacity={isHover ? 0.35 : 0.18} />
+                {/* white outline for visibility on light map */}
+                <circle cx={x} cy={y} r={r + 2} fill="#0D0F1A" opacity={0.9} />
+                <circle cx={x} cy={y} r={r} fill={color} stroke="#F5EDD8" strokeWidth={1.8} />
                 {isHover && (
                   <g>
-                    <rect x={x + 10} y={y - 14} width={Math.max(80, loc.name.length * 7 + 16)} height={28} fill="rgba(13,15,26,0.92)" stroke={color} strokeWidth={1} />
-                    <text x={x + 18} y={y + 4} fill="#F5EDD8" fontSize={11} fontFamily="Cinzel, serif">
+                    <rect x={x + 12} y={y - 16} width={Math.max(100, loc.name.length * 8 + 20)} height={32} fill="rgba(13,15,26,0.95)" stroke={color} strokeWidth={1.4} rx={3} />
+                    <text x={x + 22} y={y + 5} fill="#F5EDD8" fontSize={13} fontFamily="Cinzel, serif" fontWeight="bold">
                       {loc.name}
                     </text>
                   </g>
@@ -99,15 +110,25 @@ export default function IndiaMap({ locations }: Props) {
           })}
         </svg>
 
-        {/* Legend */}
-        <div className="absolute bottom-2 left-2 right-2 flex flex-wrap gap-x-3 gap-y-1 text-[9px] font-mono pointer-events-none">
-          {Object.entries(REGION_COLOR).map(([region, color]) => (
-            <div key={region} className="flex items-center gap-1 text-text-muted">
-              <span className="w-2 h-2 rounded-full inline-block" style={{ background: color }} />
-              <span className="capitalize">{region}</span>
+        {/* Legend — continent colors only */}
+        <div className="absolute bottom-2 left-2 right-2 flex flex-wrap gap-x-3 gap-y-1 text-[9px] font-mono pointer-events-none bg-bg-base/70 rounded-sm px-2 py-1">
+          {[
+            ['europe',        'Europe'],
+            ['asia',          'Asia'],
+            ['africa',        'Africa'],
+            ['oceania',       'Oceania'],
+            ['north-america', 'North America'],
+            ['south-america', 'South America'],
+          ].map(([region, label]) => (
+            <div key={region} className="flex items-center gap-1 text-text-secondary">
+              <span className="w-2 h-2 rounded-full inline-block" style={{ background: REGION_COLOR[region] }} />
+              <span>{label}</span>
             </div>
           ))}
         </div>
+        <p className="absolute top-2 right-2 font-mono text-[9px] text-text-muted bg-bg-base/70 rounded-sm px-2 py-1 pointer-events-none">
+          Click any pin to start the tour
+        </p>
       </div>
     </div>
   )

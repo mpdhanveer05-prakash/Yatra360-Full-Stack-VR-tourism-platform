@@ -9,7 +9,7 @@ import random
 from pathlib import Path
 from typing import Any
 
-_LOCATIONS_PATH = Path(__file__).parent.parent.parent / "src" / "data" / "indiaLocations.json"
+_LOCATIONS_PATH = Path(__file__).parent.parent / "data" / "indiaLocations.json"
 
 
 def _load_graph() -> dict[str, list[str]]:

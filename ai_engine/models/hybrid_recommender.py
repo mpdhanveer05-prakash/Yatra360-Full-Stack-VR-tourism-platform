@@ -12,7 +12,7 @@ from typing import Any
 # Feature data
 # ---------------------------------------------------------------------------
 _FEATURES_PATH = Path(__file__).parent.parent / "data" / "location_features.json"
-_LOCATIONS_PATH = Path(__file__).parent.parent.parent / "src" / "data" / "indiaLocations.json"
+_LOCATIONS_PATH = Path(__file__).parent.parent / "data" / "indiaLocations.json"
 
 FEATURE_KEYS = [
     "historical", "architectural", "religious", "natural", "cultural",

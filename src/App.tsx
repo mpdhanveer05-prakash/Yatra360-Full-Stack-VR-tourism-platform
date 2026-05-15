@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AppShell from './components/layout/AppShell'
+import RequireAuth from './components/layout/RequireAuth'
 import HomePage from './components/pages/HomePage'
 import ExplorePage from './components/pages/ExplorePage'
 import TourPage from './components/pages/TourPage'
@@ -8,7 +9,8 @@ import AboutPage from './components/pages/AboutPage'
 import JourneysPage from './components/pages/JourneysPage'
 import JourneyPage from './components/pages/JourneyPage'
 import ComparePage from './components/pages/ComparePage'
-import ClassroomPage from './components/pages/ClassroomPage'
+import LoginPage from './components/pages/LoginPage'
+import SignupPage from './components/pages/SignupPage'
 
 export default function App() {
   return (
@@ -16,14 +18,18 @@ export default function App() {
       <Routes>
         <Route path="/" element={<AppShell />}>
           <Route index element={<HomePage />} />
-          <Route path="explore" element={<ExplorePage />} />
-          <Route path="tour/:locationId" element={<TourPage />} />
-          <Route path="journeys" element={<JourneysPage />} />
-          <Route path="journey/:journeyId" element={<JourneyPage />} />
-          <Route path="compare" element={<ComparePage />} />
-          <Route path="classroom" element={<ClassroomPage />} />
-          <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="about" element={<AboutPage />} />
+          <Route path="login"  element={<LoginPage />} />
+          <Route path="signup" element={<SignupPage />} />
+          <Route path="about"  element={<AboutPage />} />
+
+          {/* Protected — require login */}
+          <Route path="explore"             element={<RequireAuth><ExplorePage /></RequireAuth>} />
+          <Route path="tour/:locationId"    element={<RequireAuth><TourPage /></RequireAuth>} />
+          <Route path="journeys"            element={<RequireAuth><JourneysPage /></RequireAuth>} />
+          <Route path="journey/:journeyId"  element={<RequireAuth><JourneyPage /></RequireAuth>} />
+          <Route path="compare"             element={<RequireAuth><ComparePage /></RequireAuth>} />
+          <Route path="dashboard"           element={<RequireAuth><DashboardPage /></RequireAuth>} />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

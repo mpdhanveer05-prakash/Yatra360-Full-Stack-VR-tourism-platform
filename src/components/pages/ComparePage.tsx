@@ -3,7 +3,13 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import StreetViewPanel from '../viewer/StreetViewPanel'
 import locations from '../../data/indiaLocations.json'
 import type { IndiaLocation } from '../../types/location'
-import { eraById } from '../../lib/eras'
+const ERA_LABELS: Record<string, string> = {
+  ancient:  'Ancient',
+  medieval: 'Medieval',
+  colonial: 'Colonial',
+  modern:   'Modern',
+  now:      'Modern',
+}
 
 const allLocations = locations as IndiaLocation[]
 
@@ -111,7 +117,7 @@ export default function ComparePage() {
     for (const k of ['ancient', 'medieval', 'colonial', 'modern'] as const) {
       if ((f[k] ?? 0) > val) { val = f[k] ?? 0; best = k }
     }
-    return eraById(best === 'modern' ? 'now' : best)?.label ?? best
+    return ERA_LABELS[best === 'modern' ? 'now' : best] ?? best
   }
 
   return (

@@ -1,18 +1,27 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import AccessibilityMenu from '../ui/AccessibilityMenu'
+import { useAuthStore } from '../../store/authStore'
 
 const links = [
   { to: '/explore',   label: 'Explore'   },
   { to: '/journeys',  label: 'Journeys'  },
   { to: '/compare',   label: 'Compare'   },
-  { to: '/classroom', label: 'Classroom' },
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/about',     label: 'About'     },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const user         = useAuthStore(s => s.user)
+  const clearSession = useAuthStore(s => s.clearSession)
+  const navigate     = useNavigate()
+
+  function handleLogout() {
+    clearSession()
+    setMobileOpen(false)
+    navigate('/', { replace: true })
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-bg-surface/80 backdrop-blur-md border-b border-[var(--border)]">
@@ -27,7 +36,7 @@ export default function Navbar() {
         </Link>
 
         {/* desktop nav */}
-        <nav aria-label="Primary" className="hidden sm:flex items-center gap-8">
+        <nav aria-label="Primary" className="hidden md:flex items-center gap-6">
           {links.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -42,11 +51,44 @@ export default function Navbar() {
             </NavLink>
           ))}
           <AccessibilityMenu />
+
+          {/* auth controls */}
+          {user ? (
+            <div className="flex items-center gap-3 pl-3 border-l border-gold/20">
+              <span
+                className="font-mono text-[11px] text-text-secondary"
+                title={user.email}
+              >
+                Hi, <span className="text-gold">{user.displayName || user.username}</span>
+              </span>
+              <button
+                onClick={handleLogout}
+                className="font-cinzel text-xs tracking-widest uppercase px-3 py-1 border border-gold/30 text-text-secondary hover:bg-saffron hover:border-saffron hover:text-cream rounded-sm transition-colors"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 pl-3 border-l border-gold/20">
+              <Link
+                to="/login"
+                className="font-cinzel text-xs tracking-widest uppercase text-text-secondary hover:text-cream transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="font-cinzel text-xs tracking-widest uppercase px-3 py-1 bg-saffron text-cream hover:bg-saffron-light rounded-sm transition-colors"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
         </nav>
 
         {/* mobile hamburger */}
         <button
-          className="sm:hidden text-text-secondary hover:text-cream transition-colors p-1"
+          className="md:hidden text-text-secondary hover:text-cream transition-colors p-1"
           onClick={() => setMobileOpen(o => !o)}
           aria-label="Toggle menu"
         >
@@ -60,7 +102,7 @@ export default function Navbar() {
 
       {/* mobile drawer */}
       {mobileOpen && (
-        <nav aria-label="Mobile" className="sm:hidden border-t border-[var(--border)] bg-bg-surface px-4 py-4 flex flex-col gap-4">
+        <nav aria-label="Mobile" className="md:hidden border-t border-[var(--border)] bg-bg-surface px-4 py-4 flex flex-col gap-4">
           {links.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -75,8 +117,38 @@ export default function Navbar() {
               {label}
             </NavLink>
           ))}
-          <div className="pt-2 border-t border-[var(--border)]">
+          <div className="pt-2 border-t border-[var(--border)] flex flex-col gap-3">
             <AccessibilityMenu />
+            {user ? (
+              <>
+                <p className="font-mono text-[11px] text-text-secondary">
+                  Signed in as <span className="text-gold">{user.displayName || user.username}</span>
+                </p>
+                <button
+                  onClick={handleLogout}
+                  className="font-cinzel text-xs tracking-widest uppercase px-3 py-2 border border-gold/30 text-text-secondary hover:bg-saffron hover:border-saffron hover:text-cream rounded-sm transition-colors"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <div className="flex gap-2">
+                <Link
+                  to="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 text-center font-cinzel text-xs tracking-widest uppercase px-3 py-2 border border-gold/30 text-text-secondary hover:text-cream rounded-sm transition-colors"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 text-center font-cinzel text-xs tracking-widest uppercase px-3 py-2 bg-saffron text-cream rounded-sm transition-colors"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
           </div>
         </nav>
       )}

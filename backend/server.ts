@@ -9,7 +9,7 @@ import recommendationsRouter from './routes/recommendations.js'
 import guideRouter from './routes/guide.js'
 import locationsRouter from './routes/locations.js'
 import annotationsRouter from './routes/annotations.js'
-import classroomRouter from './routes/classroom.js'
+import authRouter from './routes/auth.js'
 import { installCoTour } from './cotour.js'
 
 dotenv.config()
@@ -26,7 +26,7 @@ app.use('/api/recommend',   recommendationsRouter)
 app.use('/api/guide',       guideRouter)
 app.use('/api/locations',   locationsRouter)
 app.use('/api/annotations', annotationsRouter)
-app.use('/api/classroom',   classroomRouter)
+app.use('/api/auth',        authRouter)
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true, ts: Date.now() })

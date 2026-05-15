@@ -117,11 +117,11 @@ export default function GuideChat() {
 
   return (
     <>
-      <div className="absolute bottom-4 right-4 z-30">{ToggleBtn}</div>
+      <div className="absolute bottom-4 left-4 z-30">{ToggleBtn}</div>
 
       {guidePanelOpen && (
         <div className="
-          absolute bottom-16 right-4 z-30
+          absolute bottom-16 left-4 z-30
           w-80 sm:w-96 max-h-[28rem] flex flex-col
           bg-bg-surface/95 backdrop-blur-md
           border border-gold/30

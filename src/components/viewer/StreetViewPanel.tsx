@@ -7,28 +7,39 @@ interface Props {
 }
 
 /**
- * Embedded Google Street View.
+ * Embedded Google Street View with proper fallbacks.
  *
  * Two embed modes:
- *  1. Maps Embed API (when VITE_GOOGLE_MAPS_KEY is set) — Google snaps to
- *     the nearest available Street View pano automatically. Best UX.
- *  2. No-key fallback via `output=svembed` — works for sites with SV at the
- *     exact coordinates; otherwise lands on a zoomed map.
+ *  1. Maps Embed API (when VITE_GOOGLE_MAPS_KEY is set) — Google snaps to the
+ *     nearest available Street View pano automatically.
+ *  2. No-key fallback via `output=svembed` — only works for sites with SV at
+ *     the exact coordinates.
  *
- * For locations without Street View at all, we surface a link to open in
- * full Google Maps where the user can drag Pegman onto a blue path.
+ * "Open in Maps" button opens the LOCATION in Google Maps regular view,
+ * not Street View — so the user actually lands on the right place.
  */
 export default function StreetViewPanel({ lat, lng, name }: Props) {
   const key = import.meta.env.VITE_GOOGLE_MAPS_KEY as string | undefined
   const [iframeKey, setIframeKey] = useState(0)
 
-  const { embedSrc, externalUrl } = useMemo(() => {
-    const externalUrl = `https://www.google.com/maps/@${lat},${lng},3a,75y,90h,90t/data=!3m4!1e1`
+  const { embedSrc, openInMapsUrl, openInStreetViewUrl } = useMemo(() => {
+    // Open the LOCATION on Google Maps (regular map mode, centered + zoomed).
+    // Uses the place-search API form so the location name resolves properly.
+    const openInMapsUrl =
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ', India')}`
+
+    // Separately, the user can request Street View directly at the coordinates
+    const openInStreetViewUrl =
+      `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`
+
     const embedSrc = key
-      ? `https://www.google.com/maps/embed/v1/streetview?key=${key}&location=${lat},${lng}&heading=0&pitch=0&fov=100&source=outdoor`
-      : `https://www.google.com/maps?q=${lat},${lng}&layer=c&cbll=${lat},${lng}&cbp=11,0,0,0,0&output=svembed&z=18`
-    return { embedSrc, externalUrl }
-  }, [lat, lng, key])
+      ? `https://www.google.com/maps/embed/v1/streetview?key=${key}` +
+        `&location=${lat},${lng}&heading=0&pitch=0&fov=100&source=outdoor`
+      : `https://www.google.com/maps?q=${lat},${lng}` +
+        `&layer=c&cbll=${lat},${lng}&cbp=11,0,0,0,0&output=svembed&z=18`
+
+    return { embedSrc, openInMapsUrl, openInStreetViewUrl }
+  }, [lat, lng, name, key])
 
   return (
     <div className="w-full h-full relative bg-bg-base">
@@ -43,42 +54,50 @@ export default function StreetViewPanel({ lat, lng, name }: Props) {
         loading="eager"
       />
 
-      {/* Help banner — appears top-center, dismissible-but-honest about limitations */}
+      {/* Help banner — appears only when no key is set */}
       {!key && (
         <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 max-w-md w-[92%]">
           <div className="bg-bg-surface/95 backdrop-blur-md border border-gold/30 px-3 py-2 flex items-start gap-2 shadow-lg rounded-sm">
             <span aria-hidden className="text-base flex-none">💡</span>
             <div className="min-w-0 flex-1 text-[10px] font-mono text-text-secondary leading-relaxed">
-              If you see a map instead of Street View, the exact coordinates have no
-              Pegman drop point.{' '}
-              <a href={externalUrl} target="_blank" rel="noopener noreferrer" className="text-saffron underline">
-                Open in Google Maps
-              </a>{' '}
-              and drag the yellow Pegman onto a blue line — or set{' '}
-              <code className="text-gold">VITE_GOOGLE_MAPS_KEY</code> in your <code className="text-gold">.env</code> for auto-snapping.
+              No Google Maps API key configured. If you see a map instead of
+              Street View, this location may not have Street View coverage —
+              try the <strong className="text-gold">Walk Tour</strong> mode in the header,
+              or <a href={openInStreetViewUrl} target="_blank" rel="noopener noreferrer" className="text-saffron underline">open in Google Maps</a>{' '}
+              and drag the yellow Pegman onto a blue road.
             </div>
           </div>
         </div>
       )}
 
-      {/* Footer toolbar */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+      {/* Footer toolbar — bottom-center, pinned above viewer chrome */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex flex-wrap items-center justify-center gap-2 max-w-[90%]">
         <a
-          href={externalUrl}
+          href={openInMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-mono text-[10px] tracking-widest uppercase px-2 py-1 bg-bg-surface/90 border border-gold/30 text-cream hover:bg-saffron hover:border-saffron transition-colors rounded-sm"
+          title={`Open ${name} on Google Maps`}
+          className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 bg-bg-surface/90 border border-gold/30 text-cream hover:bg-saffron hover:border-saffron transition-colors rounded-sm"
         >
           ↗ Open in Maps
         </a>
+        <a
+          href={openInStreetViewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Open Street View at exact coordinates"
+          className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 bg-bg-surface/90 border border-gold/30 text-cream hover:bg-saffron hover:border-saffron transition-colors rounded-sm"
+        >
+          🚶 Street View
+        </a>
         <button
           onClick={() => setIframeKey(k => k + 1)}
-          className="font-mono text-[10px] tracking-widest uppercase px-2 py-1 bg-bg-surface/90 border border-gold/30 text-cream hover:bg-saffron hover:border-saffron transition-colors rounded-sm"
+          className="font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 bg-bg-surface/90 border border-gold/30 text-cream hover:bg-saffron hover:border-saffron transition-colors rounded-sm"
           title="Reload Street View"
         >
           ↻ Retry
         </button>
-        <p className="font-mono text-[9px] tracking-widest text-white/60 bg-black/40 px-2 py-1 rounded-sm pointer-events-none">
+        <p className="font-mono text-[9px] tracking-widest text-white/70 bg-black/50 px-2 py-1 rounded-sm pointer-events-none hidden md:inline-block">
           Click arrows to walk · Drag to look
         </p>
       </div>

@@ -22,8 +22,6 @@ import NarrationControls from '../ui/NarrationControls'
 import { useNarration } from '../../hooks/useNarration'
 import { useAmbientAudio } from '../../hooks/useAmbientAudio'
 import { usePassportStore } from '../../store/passportStore'
-import EraSlider from '../ui/EraSlider'
-import { hasTimeTravel } from '../../lib/eras'
 import FestivalBanner from '../ui/FestivalBanner'
 import { activeFestivals } from '../../lib/festivals'
 import { asiForLocation, nearbyAsi } from '../../lib/asi'
@@ -83,14 +81,16 @@ function TourOverlays({ sessionId, sessionStart }: { sessionId: string; sessionS
 
   return (
     <>
-      <div className="absolute bottom-4 left-4 z-20">
+      <div className="absolute top-20 left-4 z-20">
         <HeatmapOverlay />
       </div>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 max-w-xs w-full px-2">
         <RecommendationRail />
       </div>
-      <div className="absolute bottom-4 right-4 z-20">
-        <SessionStats sessionStartMs={sessionStart} engagementScore={engScore} />
+      <div className="absolute top-20 right-4 z-20" style={{ pointerEvents: 'none' }}>
+        <div style={{ pointerEvents: 'auto' }}>
+          <SessionStats sessionStartMs={sessionStart} engagementScore={engScore} />
+        </div>
       </div>
     </>
   )
@@ -496,13 +496,6 @@ export default function TourPage() {
           />
         </div>
 
-        {/* Time-travel era slider (only when reconstructions exist) */}
-        {hasTimeTravel(activeLocation.id) && (
-          <div className="absolute top-4 left-4 z-20">
-            <EraSlider locationId={activeLocation.id} locationName={activeLocation.name} />
-          </div>
-        )}
-
         {/* Festival overlay (if a matching festival is active or upcoming) */}
         {festivalMatch && (
           <FestivalBanner
@@ -515,8 +508,9 @@ export default function TourPage() {
         {/* Guide chat available in both viewer modes */}
         <GuideChat />
 
-        {/* Voice agent — floating mic, bottom-right above guide chat toggle */}
-        <div className="absolute bottom-24 right-4 z-30">
+        {/* Voice agent — floating mic, bottom-LEFT above guide chat toggle
+            (left side keeps clear of Google Street View's bottom-right controls) */}
+        <div className="absolute bottom-24 left-4 z-30">
           <VoiceAgentButton
             state={voice.state}
             transcript={voice.transcript}
